@@ -1,0 +1,80 @@
+﻿@{ ViewBag.Title = "Create"; }
+
+<h2>Create</h2>
+<style>
+    .white-container {
+        background: white;
+        padding: 10px;
+    }
+
+    .tile-container {
+        padding: 10px;
+        background: #3498DB;
+        box-shadow: 1px 1px 1px 1px rgb(128, 128, 128);
+        text-align: center;
+        margin: 20px;
+    }
+
+        .tile-container img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        .tile-container .heading {
+            text-transform: capitalize;
+            font-size: 24px;
+            color: #2C3E50;
+            cursor: pointer;
+        }
+
+    .btn-hint {
+        color: lightgrey;
+    }
+
+        .btn-hint:hover {
+            color: black;
+        }
+
+        .btn-hint.active {
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+
+    .info-container {
+        overflow: hidden;
+        max-height: 26px;
+    }
+
+        .info-container.active {
+            max-height: 500px;
+        }
+</style>
+
+<div class="model-container">
+    @Html.Partial("_model-tile")
+    @Html.Partial("_model-tile")
+    @Html.Partial("_model-tile")
+    @Html.Partial("_model-tile")
+</div>
+
+@section Scripts  {
+    <script>
+        $(document).ready(function () {
+
+            $(".model-container").masonry({
+                itemSelector: ".model-tile",
+                horizontalOrder: true,
+            });
+
+            $(".info-container .btn-hint").on("click", function () {
+                //console.log("hint click", $(this).siblings("info"));
+                $(this).toggleClass("active");
+                $(this).closest(".info-container").toggleClass("active");
+                $(".model-container").masonry();
+            });
+
+        });
+    </script>
+}
