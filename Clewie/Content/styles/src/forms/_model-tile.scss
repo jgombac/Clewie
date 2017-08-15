@@ -1,0 +1,50 @@
+﻿.white {
+    background: white;
+    &-container {
+        background: white;
+        padding: 10px;
+    }
+}
+
+.tile-container {
+    padding: 5px;
+    background: #3498DB;
+    box-shadow: 1px 1px 1px 1px rgb(128, 128, 128);
+    text-align: center;
+    margin: 10px;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .heading {
+        text-transform: capitalize;
+        font-size: 24px;
+        color: #2C3E50;
+        cursor: pointer;
+    }
+
+    .info-container {
+        overflow: hidden;
+        max-height: 26px;
+
+        &.active {
+            max-height: 500px;
+        }
+    }
+}
+
+.btn-hint {
+    color: lightgrey;
+
+    &:hover {
+        color: black;
+    }
+
+    &.active {
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}

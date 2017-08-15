@@ -1,0 +1,38 @@
+.white {
+  background: white; }
+  .white-container {
+    background: white;
+    padding: 10px; }
+
+.tile-container {
+  padding: 5px;
+  background: #3498DB;
+  -webkit-box-shadow: 1px 1px 1px 1px gray;
+          box-shadow: 1px 1px 1px 1px gray;
+  text-align: center;
+  margin: 10px; }
+  .tile-container img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain; }
+  .tile-container .heading {
+    text-transform: capitalize;
+    font-size: 24px;
+    color: #2C3E50;
+    cursor: pointer; }
+  .tile-container .info-container {
+    overflow: hidden;
+    max-height: 26px; }
+    .tile-container .info-container.active {
+      max-height: 500px; }
+
+.btn-hint {
+  color: lightgrey; }
+  .btn-hint:hover {
+    color: black; }
+  .btn-hint.active {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg); }
+
+/*# sourceMappingURL=style.css.map */

@@ -5,10 +5,21 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "autoprefixer": "^7.1.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-changed": "^3.1.0",
     "gulp-concat": "^2.6.1",
-    "gulp-uglify": "^3.0.0"
+    "gulp-minify": "^1.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "merge-stream": "^1.0.1",
+    "postcss-cachebuster": "^0.1.5",
+    "yargs": "^8.0.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

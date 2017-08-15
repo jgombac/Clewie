@@ -246,6 +246,11 @@
     <Content Include="Content\assets\images\perceptron.svg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\scripts\build\create-model.js" />
+    <Content Include="Content\scripts\build\utils.js" />
+    <Content Include="Content\scripts\src\modelScripts\neural-network.js" />
+    <Content Include="Content\scripts\src\utils\api-helper.js" />
+    <Content Include="Content\styles\build\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -274,7 +279,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\src\styles\forms\_model-tile.scss" />
+    <Content Include="Content\styles\src\forms\_model-tile.scss" />
+    <Content Include="gulpfile.config-clewie.js" />
+    <Content Include="Content\styles\src\style-clewie.scss" />
+    <Content Include="Content\styles\build\style.css.map" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -305,13 +313,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Create\Index.cshtml" />
     <Content Include="Views\Create\_model-tile.cshtml" />
-    <Content Include="Views\Create\Models\neuralNetwork.cshtml" />
+    <Content Include="Views\Create\Models\NeuralNetwork.cshtml" />
     <Content Include="Views\Create\Partials\_ApiDetails.cshtml" />
+    <Content Include="Views\Shared\_scripts.cshtml" />
+    <Content Include="Views\Shared\_styles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\src\scripts\" />
-    <Folder Include="Views\Shared\Partials\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
