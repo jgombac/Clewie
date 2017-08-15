@@ -13,5 +13,11 @@ namespace Clewie.Controllers
         {
             return View();
         }
+
+        [Route("Create/{modelName}")]
+        public ActionResult Model(string modelName)
+        {
+            return View("Models/" + modelName);
+        }
     }
 }
