@@ -3,7 +3,14 @@
     ViewBag.Title = "NeuralNetwork";
 }
 
-<h2>Neural Network</h2>
+@Html.Partial("Partials/_ApiDetails")
 
+@section Scripts {
+    <script>
 
+    $(document).ready(function () {
+        gom.create.init($("#api-details"));
+    });
+    </script>
 
+}

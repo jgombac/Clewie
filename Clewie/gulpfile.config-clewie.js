@@ -32,6 +32,7 @@
                 "build": "utils.js",
                 "source": [
                     path_source_scripts + "utils/api-helper.js",
+                    path_source_scripts + "utils/randomizer.js",
                 ]
             }
         ]
