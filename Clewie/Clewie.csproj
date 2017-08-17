@@ -250,6 +250,7 @@
     <Content Include="Content\scripts\build\utils.js" />
     <Content Include="Content\scripts\src\modelScripts\neural-network.js" />
     <Content Include="Content\scripts\src\utils\api-helper.js" />
+    <Content Include="Content\scripts\src\utils\randomizer.js" />
     <Content Include="Content\styles\build\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -283,6 +284,8 @@
     <Content Include="gulpfile.config-clewie.js" />
     <Content Include="Content\styles\src\style-clewie.scss" />
     <Content Include="Content\styles\build\style.css.map" />
+    <Content Include="Content\styles\src\components\_components.scss" />
+    <Content Include="Content\styles\src\_site-variables.scss" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
