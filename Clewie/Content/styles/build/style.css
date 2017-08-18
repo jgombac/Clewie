@@ -12,6 +12,43 @@ input {
   font-size: 32px;
   color: #333333; }
 
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.file-input + label {
+  display: block;
+  background: #3498DB;
+  border-radius: 10px;
+  padding: 6px 12px;
+  color: #ECF0F1; }
+  .file-input + label:hover {
+    background: #2980B9; }
+  .file-input + label.active {
+    background: #3BBF67; }
+
+/*FORMS*/
+.model-inspector .inspector-section {
+  border: 1px solid #C5C3C6; }
+  .model-inspector .inspector-section .inspector-content {
+    padding: 10px 20px; }
+
+.model-inspector .inspector-header {
+  background: #2980B9;
+  padding: 10px;
+  color: #ECF0F1;
+  font-size: 20px;
+  font-weight: bold; }
+  .model-inspector .inspector-header i {
+    float: right;
+    cursor: pointer; }
+    .model-inspector .inspector-header i:hover {
+      opacity: 0.6; }
+
 .white {
   background: white; }
   .white-container {

@@ -11,78 +11,87 @@
     <div class="model-inspector">
         <section class="inspector-section">
             <div class="inspector-header">
-                <h1>Input file</h1>
+                <span>Input file</span>
                 <i class="glyphicon glyphicon-info-sign"></i>
             </div>
-
-            <div class="input-group">
-                <label for="training-input">Training set</label>
-                <input id="training-input" type="file" data-gom-file="training" />
-            </div>
-
-            <div class="input-group">
-                <label>File parameters</label>
+            <div class="inspector-content">
                 <div class="input-group">
-                    <label>Column separator</label>
-                    <select id="column-separator" class="form-control">
-                        <option value="0">Semicolon ; </option>
-                        <option value="1">Comma , </option>
-                        <option value="2">Dash - </option>
-                    </select>
+                    <label for="training-input">Training set</label>
+                    <input id="training-input" class="file-input" type="file" data-gom-file="training" />
+                    <label>Choose a file...</label>
                 </div>
+
                 <div class="input-group">
-                    <label>Decimal separator</label>
-                    <select id="deciamal-separator" class="form-control">
-                        <option value="0">Dot . </option>
-                        <option value="1">Comma , </option>
-                    </select>
+                    <h2>File parameters</h2>
+                    <div class="input-group">
+                        <label>Column separator</label>
+                        <select id="column-separator" class="form-control">
+                            <option value="0">Semicolon ; </option>
+                            <option value="1">Comma , </option>
+                            <option value="2">Dash - </option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Decimal separator</label>
+                        <select id="deciamal-separator" class="form-control">
+                            <option value="0">Dot . </option>
+                            <option value="1">Comma , </option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="inspector-section">
             <div class="inspector-header">
-                <h1>Layer parameters</h1>
+                Layer parameters
+                <i class="glyphicon glyphicon-info-sign"></i>
             </div>
-
-            <div class="input-group">
-                <label for="input-layer">Input</label>
-                <input id="input-layer" class="form-control input-lg" type="number"/>
+            <div class="inspector-content">
+                <div class="input-group">
+                    <label for="input-layer">Input</label>
+                    <div class="input-group">
+                        <input type="button" class="form-control">
+                        <input id="input-layer" class="form-control input-lg" type="number" />
+                        
+                    </div>
+                </div>
+                <div class="hidden-group">
+                    <label for="hidden-layer">Input</label>
+                    <input id="hidden-layer" class="form-control input-lg" type="number" />
+                </div>
+                <div class="output-group">
+                    <label for="output-layer">Input</label>
+                    <input id="output-layer" class="form-control input-lg" type="number" />
+                </div>
             </div>
-            <div class="hidden-group">
-                <label for="hidden-layer">Input</label>
-                <input id="hidden-layer" class="form-control input-lg" type="number"/>
-            </div>
-            <div class="output-group">
-                <label for="output-layer">Input</label>
-                <input id="output-layer" class="form-control input-lg" type="number"/>
-            </div>
-
         </section>
 
         <section class="inspector-section">
             <div class="inspector-header">
-                <h1>Learning parameters</h1>
+                Learning parameters
+                <i class="glyphicon glyphicon-info-sign"></i>            
             </div>
+            <div class="inspector-content">
+                <div class="input-group">
+                    <label for="max-epochs">Max epochs</label>
+                    <input id="max-epochs" class="form-control" type="number" />
+                </div>
 
-            <div class="input-group">
-                <label for="max-epochs">Max epochs</label>
-                <input id="max-epochs" class="form-control" type="number"/>
-            </div>
+                <div class="input-group">
+                    <label for="learning-rate">Learning rate</label>
+                    <input id="learning-rate" class="form-control" type="number" />
+                </div>
 
-            <div class="input-group">
-                <label for="learning-rate">Learning rate</label>
-                <input id="learning-rate" class="form-control" type="number"/>
-            </div>
+                <div class="input-group">
+                    <label for="momentum">Momentum</label>
+                    <input id="momentum" class="form-control" type="number" />
+                </div>
 
-            <div class="input-group">
-                <label for="momentum">Momentum</label>
-                <input id="momentum" class="form-control" type="number"/>
-            </div>
-
-            <div class="input-group">
-                <label for="weight-decay">Weight decay</label>
-                <input id="weight-decay" class="form-control" type="number"/>
+                <div class="input-group">
+                    <label for="weight-decay">Weight decay</label>
+                    <input id="weight-decay" class="form-control" type="number" />
+                </div>
             </div>
         </section>
         
