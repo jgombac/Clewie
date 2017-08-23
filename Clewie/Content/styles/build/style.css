@@ -7,29 +7,19 @@ label {
   color: #777577; }
 
 input {
-  background: #DCDCDD;
-  height: 40px;
+  /*background: $almost-white;*/
+  height: 32px;
   font-size: 32px;
   color: #333333; }
 
-.file-input {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1; }
+input[type="file"].file-upload-def {
+  display: none; }
 
-.file-input + label {
-  display: block;
-  background: #3498DB;
-  border-radius: 10px;
-  padding: 6px 12px;
-  color: #ECF0F1; }
-  .file-input + label:hover {
-    background: #2980B9; }
-  .file-input + label.active {
-    background: #3BBF67; }
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 4px 12px;
+  cursor: pointer; }
 
 /*FORMS*/
 .model-inspector .inspector-section {
@@ -38,16 +28,16 @@ input {
     padding: 10px 20px; }
 
 .model-inspector .inspector-header {
-  background: #2980B9;
+  border: 2px solid #777577;
   padding: 10px;
-  color: #ECF0F1;
+  color: #777577;
   font-size: 20px;
   font-weight: bold; }
   .model-inspector .inspector-header i {
     float: right;
     cursor: pointer; }
-    .model-inspector .inspector-header i:hover {
-      opacity: 0.6; }
+  .model-inspector .inspector-header:hover {
+    opacity: 0.6; }
 
 .white {
   background: white; }
