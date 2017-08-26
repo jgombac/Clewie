@@ -1,0 +1,25 @@
+﻿
+.inspector-section {
+    border: 1px solid $light-grey;
+
+    .inspector-content {
+        padding: 10px 20px;
+    }
+}
+
+.inspector-header {
+    border: 2px solid $dark-grey;
+    padding: 10px;
+    color: $dark-grey;
+    font-size: 20px;
+    font-weight: bold;
+
+    i {
+        float: right;
+        cursor: pointer;
+    }
+
+    &:hover {
+        opacity: 0.6;
+    }
+}

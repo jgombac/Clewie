@@ -22,21 +22,21 @@ input[type="file"].file-upload-def {
   cursor: pointer; }
 
 /*FORMS*/
-.model-inspector .inspector-section {
+.inspector-section {
   border: 1px solid #C5C3C6; }
-  .model-inspector .inspector-section .inspector-content {
+  .inspector-section .inspector-content {
     padding: 10px 20px; }
 
-.model-inspector .inspector-header {
+.inspector-header {
   border: 2px solid #777577;
   padding: 10px;
   color: #777577;
   font-size: 20px;
   font-weight: bold; }
-  .model-inspector .inspector-header i {
+  .inspector-header i {
     float: right;
     cursor: pointer; }
-  .model-inspector .inspector-header:hover {
+  .inspector-header:hover {
     opacity: 0.6; }
 
 .white {

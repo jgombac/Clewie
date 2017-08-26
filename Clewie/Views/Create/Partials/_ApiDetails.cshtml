@@ -1,16 +1,41 @@
-﻿<section id="api-details">
+﻿<section id="api-details" class="inspector-section">
 
-    <div class="input-group">
-        <label for="api-name" class="lbl">Name</label>
-        <input id="api-name" class="form-control input-lg" data-gom-model="name" type="text" name="caption" />
+    <div class="inspector-header">
+        Model API details
+        <i class="glyphicon glyphicon-info-sign"></i>
     </div>
-    <div class="input-group">
-        <label for="api-reference-id" class="lbl">Reference ID</label>
-        <input id="api-reference-id" class="form-control input-lg" disabled="disabled" data-gom-model="id" />
-    </div>
-    <div class="input-group">
-        <label for="api-description" class="lbl">Description</label>
-<textarea id="api-description" class="form-control input-lg" type="text" data-gom-model="description"></textarea>
+    <div class="container inspector-content">
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <div class="input-group">
+
+                    <label for="api-name" class="lbl">Name</label>
+                    <input id="api-name" class="form-control" data-gom-model="name" type="text" name="caption" />
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <div class="input-group">
+
+                    <label for="api-reference-id" class="lbl">Reference ID</label>
+                    <input id="api-reference-id" class="form-control" disabled="disabled" data-gom-model="id" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div>
+                    <label for="api-description" class="lbl">Description</label>
+                </div>
+<input id="api-description" class="form-control" type="text" data-gom-model="description"></input>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <button id="publish-model" class="btn btn-primary">Publish</button>
+            </div>
+        </div>
     </div>
 
 </section>
