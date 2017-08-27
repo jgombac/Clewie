@@ -2,14 +2,27 @@
 
 label {
     font-size: 18px;
-    color: $dark-grey;
+    color: $bright-blue;
 }
 
 input {
     /*background: $almost-white;*/
     height: 32px;
-    font-size: 32px;
+    font-size: 24px;
     color: $black;
+    max-width: 100%;
+    border: transparent;
+    border-bottom: 1px solid $grey;
+    padding: 0 2px;
+
+    &:focus {
+        outline: none !important;
+    }
+
+    &:disabled {
+        background: transparent;
+        color: $dark-grey;
+    }
 }
 
 input[type="file"].file-upload-def {

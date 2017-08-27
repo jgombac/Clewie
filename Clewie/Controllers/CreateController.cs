@@ -23,14 +23,14 @@ namespace Clewie.Controllers
             return View("Models/" + modelName);
         }
 
-        [HttpPost]
-        [Route("Publish/{id}")]
-        public ActionResult Publish(string id, APIModel model)
-        {
-            Debug.WriteLine(id);
-            Debug.WriteLine(model.Id);
-            return RedirectToAction("Browse", "Model");
-        }
+        //[HttpPost]
+        //[Route("Publish/{id}")]
+        //public ActionResult Publish(string id, APIModel model)
+        //{
+        //    Debug.WriteLine(id);
+        //    Debug.WriteLine(model.Id);
+        //    return RedirectToAction("Browse", "Model");
+        //}
 
     }
 }

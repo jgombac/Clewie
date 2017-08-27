@@ -1,16 +1,19 @@
-
-
-<div class="model-tile col-lg-3 col-md-4 col-sm-6">
-    <div class="tile-container">
-        <div class="white-container">
-            <img src="~/Content/assets/images/perceptron.svg" alt="">
-            <a href="@Url.Action("Model", new { modelName = "NeuralNetwork" })" class="heading">Neural network</a>
-            <div>Fully connected perceptrons with back-propagation</div>
-            <div class="info-container">
-                <span class="btn btn-hint glyphicon glyphicon-chevron-down"></span>
-                <div class="info">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque maiores illo assumenda ipsam minima error saepe enim delectus earum voluptatum quae cum consequuntur dolores quod repellendus, impedit facere pariatur at!
+<div class="model-tile">
+    <div class="model-border">
+        <div class="tile">
+            <a class="model-img--link" href="@Url.Action("Model", new { modelName = "NeuralNetwork" })">
+                <img class="model-img" src="~/Content/assets/images/perceptron.svg" alt="Model image" />
+                <span class="icon icon-info model-info"></span>
+            </a>
+            <div class="model-details">
+                <a class="model-header" href="@Url.Action("Model", new { modelName = "NeuralNetwork" })">
+                    Neural network
+                </a>
+                <div class="model-desc">
+                    Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod,
+                    iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
                 </div>
+
             </div>
         </div>
     </div>

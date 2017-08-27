@@ -1,18 +1,78 @@
-﻿
+﻿.model-section {
+    padding: 10px 20px;
+    font-size: 26px;
+    text-align: center;
+
+    .start-group, .running-group {
+        text-align: left;
+        vertical-align: middle;
+    }
+}
+
+
+
+.start-group {
+
+    button {
+        background: transparent;
+        border: none;
+        vertical-align: middle;
+        outline: none;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            background: $white;
+            color: $blue;
+        }
+    }
+
+    .refresh-btn {
+        font-size: 24px;
+        color: $dark-blue;
+        background: transparent;
+        border-radius: 100%;
+        padding: 10px;
+
+        &:hover {
+            background: $white;
+        }
+    }
+
+    .start-btn {
+        font-size: 44px;
+        padding: 10px 10px 10px 15px;
+        color: $white;
+        background: $dark-blue;
+        border-radius: 100%;
+        margin: 0 54px 0 44px;
+    }
+}
+
+.model-inspector {
+    max-width: 320px;
+}
+
+
 .inspector-section {
     border: 1px solid $light-grey;
 
     .inspector-content {
         padding: 10px 20px;
     }
+
+    .input-group {
+        width: 80%;
+    }
 }
 
 .inspector-header {
-    border: 2px solid $dark-grey;
+    border: 1px solid $dark-grey;
     padding: 10px;
-    color: $dark-grey;
+    color: $white;
     font-size: 20px;
     font-weight: bold;
+    background: $dark-blue;
 
     i {
         float: right;

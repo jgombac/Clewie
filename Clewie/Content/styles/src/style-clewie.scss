@@ -1,8 +1,16 @@
 ﻿/*VARIABLES*/
 @import "site-variables";
 
+/*BASE*/
+@import "base/general-styles";
+
+/*ICONS*/
+@import "/Content/assets/icons/style.css";
+
 /*COMPONENTS*/
 @import "components/components";
+@import "components/topbar";
+@import "components/tile";
 
 
 /*FORMS*/

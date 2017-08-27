@@ -1,50 +1,52 @@
-﻿.white {
-    background: white;
-    &-container {
-        background: white;
-        padding: 10px;
+﻿.model-tile-sizer, .model-tile {
+    width: 33.33333%;
+
+    @media screen and (max-width: $scr-md) {
+        width: 50%;
     }
-}
 
-.tile-container {
-    padding: 5px;
-    background: #3498DB;
-    box-shadow: 1px 1px 1px 1px rgb(128, 128, 128);
-    text-align: center;
-    margin: 10px;
-
-    img {
+    @media screen and (max-width: $scr-sm) {
         width: 100%;
-        object-fit: contain;
-    }
-
-    .heading {
-        text-transform: capitalize;
-        font-size: 24px;
-        color: #2C3E50;
-        cursor: pointer;
-    }
-
-    .info-container {
-        overflow: hidden;
-        max-height: 26px;
-
-        &.active {
-            max-height: 500px;
-        }
     }
 }
 
-.btn-hint {
-    color: lightgrey;
 
-    &:hover {
-        color: black;
+.model-tile {
+    /*padding: 20px;*/
+    .model-border {
+        border: 20px solid transparent;
     }
 
-    &.active {
-        -webkit-transform: rotate(180deg);
-        -ms-transform: rotate(180deg);
-        transform: rotate(180deg);
+    .model-img {
+        background: white;
+        width: 100%;
+        max-height: 260px;
+    }
+
+    .model-details {
+        padding: 10px 20px;
+    }
+
+    a {
+        color: $black;
+        text-decoration: none;
+    }
+
+    .model-header {
+        font-size: 30px;
+    }
+
+    .model-info {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        padding: 12px 4px;
+        background: $dark-blue;
+        color: $white;
+        border-radius: 0 0 4px 4px;
+
+        &:hover {
+            padding: 13px 5px;
+        }
     }
 }

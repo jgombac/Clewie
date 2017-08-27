@@ -3,6 +3,21 @@
     ViewBag.Title = "NeuralNetwork";
 }
 
+
+<section class="model-section">
+
+    <div class="start-group inline">
+        <button class="refresh-btn icon icon-loop2"></button>
+
+        <button class="start-btn icon icon-play3"></button>
+        <div class="running-group inline">
+            <label class="label">Epochs</label>
+            <span>0</span>
+        </div>
+    </div>
+
+</section>
+
 @Html.Partial("Partials/_ApiDetails")
 
 
@@ -14,36 +29,33 @@
             <i class="glyphicon glyphicon-info-sign"></i>
         </div>
         <div class="container inspector-content">
-            <div class="row">
-                <div class=" col-sm-12 col-md-4">
-                    <div class="input-group">
-                        <div><label>Training set</label></div>
-                        <label for="file-upload" class="custom-file-upload">
-                            <i class="glyphicon glyphicon-file"></i>Upload file
-                        </label>
-                        <input class="file-upload-def" id="file-upload" type="file" />
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="input-group">
-                        <label>Column separator</label>
-                        <select id="column-separator" class="form-control">
-                            <option value="0">Semicolon ; </option>
-                            <option value="1">Comma , </option>
-                            <option value="2">Dash - </option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="input-group">
-                        <label>Decimal separator</label>
-                        <select id="deciamal-separator" class="form-control">
-                            <option value="0">Dot . </option>
-                            <option value="1">Comma , </option>
-                        </select>
-                    </div>
-                </div>
+
+            <div class="input-group">
+                <div><label>Training set</label></div>
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="glyphicon glyphicon-file"></i>Upload file
+                </label>
+                <input class="file-upload-def" id="file-upload" type="file" />
             </div>
+
+            <div class="input-group">
+                <label>Column separator</label>
+                <select id="column-separator" class="form-control">
+                    <option value="0">Semicolon ; </option>
+                    <option value="1">Comma , </option>
+                    <option value="2">Dash - </option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Decimal separator</label>
+                <select id="deciamal-separator" class="form-control">
+                    <option value="0">Dot . </option>
+                    <option value="1">Comma , </option>
+                </select>
+            </div>
+
+
 
         </div>
     </section>
@@ -54,27 +66,25 @@
             <i class="glyphicon glyphicon-info-sign"></i>
         </div>
         <div class="container inspector-content">
-            <div class="row">
-                <div class="col-xs-12 col-md-4">
-                    <div class="input-group">
-                        <label for="input-layer">Input</label>
-                        <input id="input-layer" class="form-control" type="number" />
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-4">
-                    <div class="input-group">
-                        <label for="hidden-layer">Hidden</label>
-                        <input id="hidden-layer" class="form-control" type="number" />
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-4">
-                    <div class="input-group">
-                        <label for="output-layer">Output</label>
-                        <input id="output-layer" class="form-control" type="number" />
-                    </div>
-                </div>
+
+            <div class="input-group">
+                <label for="input-layer">Input</label>
+                <input id="input-layer" class="form-control" type="number" />
+            </div>
+
+
+            <div class="input-group">
+                <label for="hidden-layer">Hidden</label>
+                <input id="hidden-layer" class="form-control" type="number" />
+            </div>
+
+
+            <div class="input-group">
+                <label for="output-layer">Output</label>
+                <input id="output-layer" class="form-control" type="number" />
             </div>
         </div>
+
     </section>
 
     <section class="inspector-section">
@@ -83,33 +93,31 @@
             <i class="glyphicon glyphicon-info-sign"></i>
         </div>
         <div class="container inspector-content">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="input-group">
-                        <label for="max-epochs">Max epochs</label>
-                        <input id="max-epochs" class="form-control" type="number" />
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="input-group">
-                        <label for="learning-rate">Learning rate</label>
-                        <input id="learning-rate" class="form-control" type="number" />
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="input-group">
-                        <label for="momentum">Momentum</label>
-                        <input id="momentum" class="form-control" type="number" />
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="input-group">
-                        <label for="weight-decay">Weight decay</label>
-                        <input id="weight-decay" class="form-control" type="number" />
-                    </div>
-                </div>
+
+            <div class="input-group">
+                <label for="max-epochs">Max epochs</label>
+                <input id="max-epochs" class="form-control" type="number" />
             </div>
+
+
+            <div class="input-group">
+                <label for="learning-rate">Learning rate</label>
+                <input id="learning-rate" class="form-control" type="number" />
+            </div>
+
+            <div class="input-group">
+                <label for="momentum">Momentum</label>
+                <input id="momentum" class="form-control" type="number" />
+            </div>
+
+
+            <div class="input-group">
+                <label for="weight-decay">Weight decay</label>
+                <input id="weight-decay" class="form-control" type="number" />
+            </div>
+
         </div>
+
     </section>
 
 
