@@ -1,9 +1,19 @@
 ﻿.model-section {
     padding: 10px 20px;
-    font-size: 26px;
+    font-size: 20px;
     text-align: center;
 
-    .start-group, .running-group {
+    &.inverted {
+        background: $dark-blue;
+        color: $white;
+    }
+
+    .model-item {
+        margin: 0 16px;
+        vertical-align: top;
+    }
+
+    .start-group, .running-group, .status-group {
         text-align: left;
         vertical-align: middle;
     }
@@ -12,6 +22,7 @@
 
 
 .start-group {
+    margin-right: 50px;
 
     button {
         background: transparent;

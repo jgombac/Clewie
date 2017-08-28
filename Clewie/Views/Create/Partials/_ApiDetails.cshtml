@@ -1,42 +1,15 @@
-﻿<section id="api-details" class="inspector-section">
-
-    <div class="inspector-header">
-        Model API details
-        <i class="glyphicon glyphicon-info-sign"></i>
+﻿<section id="api-details" class="model-section inverted">
+    <div class="inline model-item">
+        <label class="label">Name</label>
+        <input data-gom-model="name" type="text" maxlength="20" />
     </div>
-    <div class="container inspector-content">
-        <div class="row">
-            <div class="col-md-6 col-xs-12">
-                <div class="input-group">
-
-                    <label for="api-name" class="lbl">Name</label>
-                    <input id="api-name" class="form-control" data-gom-model="name" type="text" name="caption" />
-                </div>
-            </div>
-            <div class="col-md-6 col-xs-12">
-                <div class="input-group">
-
-                    <label for="api-reference-id" class="lbl">Reference ID</label>
-                    <input id="api-reference-id" class="form-control" disabled="disabled" data-gom-model="id" />
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12">
-
-                <div class="input-group">
-                    <label for="api-description" class="lbl">Description</label>
-                    <input id="api-description" class="form-control" type="text" data-gom-model="description" />
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xs-12">
-                <button id="publish-model" class="btn btn-primary">Publish</button>
-            </div>
-        </div>
+    <div class="inline model-item">
+        <label class="label">Reference ID</label>
+        <span data-gom-model="id"></span>
     </div>
 
+    <div class="inline model-item">
+        <label class="label">Description</label>
+        <input type="text" data-gom-model="description" />
+    </div>
 </section>
-

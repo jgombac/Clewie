@@ -3,6 +3,7 @@
     ViewBag.Title = "NeuralNetwork";
 }
 
+@Html.Partial("Partials/_ApiDetails")
 
 <section class="model-section">
 
@@ -16,9 +17,52 @@
         </div>
     </div>
 
+    <div class="status-group inline">
+        <div class="inline model-item">
+            <label class="label">Train accuracy</label>
+            <span>0.00</span>
+        </div>
+        <div class="inline model-item">
+            <label class="label">Test accuracy</label>
+            <span>0.00</span>
+        </div>
+    </div>
+
 </section>
 
-@Html.Partial("Partials/_ApiDetails")
+<section id="layer-designer" class="model-section">
+    <table>
+        <thead>
+            <tr>
+                <th>Input</th>
+                <th>Hidden</th>
+                <th>Output</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="neuron-wrapper"></div>
+                    <div class="neuron-wrapper"></div>
+                    <div class="neuron-wrapper"></div>
+                </td>
+                <td>
+                    <div class="neuron-wrapper"></div>
+                    <div class="neuron-wrapper"></div>
+                    <div class="neuron-wrapper"></div>
+                    <div class="neuron-wrapper"></div>
+                </td>
+                <td>
+                    <div class="neuron-wrapper"></div>
+                    <div class="neuron-wrapper"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
 
 
 

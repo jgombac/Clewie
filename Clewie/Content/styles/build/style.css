@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e23e5d83b");
+@import url("/Content/assets/icons/style.css?v15e27663bea");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -15,7 +15,8 @@ body {
   display: inline-block; }
 
 .label {
-  display: block; }
+  display: block;
+  text-align: left; }
 
 .form-control {
   height: 32px; }
@@ -514,15 +515,23 @@ label {
   font-size: 18px;
   color: #3498DB; }
 
+.inverted input {
+  color: #ECF0F1;
+  border-bottom: 1px solid #ECF0F1; }
+
+.inverted label {
+  color: #9fd9ff; }
+
 input {
   /*background: $almost-white;*/
   height: 32px;
   font-size: 24px;
-  color: #403D58;
+  color: #2C3E50;
   max-width: 100%;
   border: transparent;
-  border-bottom: 1px solid #A7A4A8;
-  padding: 0 2px; }
+  border-bottom: 1px solid #2C3E50;
+  padding: 0 2px;
+  background: transparent; }
   input:focus {
     outline: none !important; }
   input:disabled {
@@ -559,6 +568,8 @@ input[type="file"].file-upload-def {
     margin: 0 20px;
     text-transform: uppercase;
     letter-spacing: 2px; }
+    .navbar a:hover {
+      color: #2980B9; }
   .navbar .navbar-toggle {
     padding: 10px 12px;
     margin: 7px 28px;
@@ -614,39 +625,45 @@ input[type="file"].file-upload-def {
 /*FORMS*/
 .model-section {
   padding: 10px 20px;
-  font-size: 26px;
+  font-size: 20px;
   text-align: center; }
-  .model-section .start-group, .model-section .running-group {
+  .model-section.inverted {
+    background: #2C3E50;
+    color: #ECF0F1; }
+  .model-section .model-item {
+    margin: 0 16px;
+    vertical-align: top; }
+  .model-section .start-group, .model-section .running-group, .model-section .status-group {
     text-align: left;
     vertical-align: middle; }
 
-.start-group button {
-  background: transparent;
-  border: none;
-  vertical-align: middle;
-  outline: none;
-  font-weight: bold;
-  cursor: pointer; }
-  .start-group button:hover {
-    background: #ECF0F1;
-    color: #2980B9; }
-
-.start-group .refresh-btn {
-  font-size: 24px;
-  color: #2C3E50;
-  background: transparent;
-  border-radius: 100%;
-  padding: 10px; }
-  .start-group .refresh-btn:hover {
-    background: #ECF0F1; }
-
-.start-group .start-btn {
-  font-size: 44px;
-  padding: 10px 10px 10px 15px;
-  color: #ECF0F1;
-  background: #2C3E50;
-  border-radius: 100%;
-  margin: 0 54px 0 44px; }
+.start-group {
+  margin-right: 50px; }
+  .start-group button {
+    background: transparent;
+    border: none;
+    vertical-align: middle;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer; }
+    .start-group button:hover {
+      background: #ECF0F1;
+      color: #2980B9; }
+  .start-group .refresh-btn {
+    font-size: 24px;
+    color: #2C3E50;
+    background: transparent;
+    border-radius: 100%;
+    padding: 10px; }
+    .start-group .refresh-btn:hover {
+      background: #ECF0F1; }
+  .start-group .start-btn {
+    font-size: 44px;
+    padding: 10px 10px 10px 15px;
+    color: #ECF0F1;
+    background: #2C3E50;
+    border-radius: 100%;
+    margin: 0 54px 0 44px; }
 
 .model-inspector {
   max-width: 320px; }
@@ -705,5 +722,9 @@ input[type="file"].file-upload-def {
     border-radius: 0 0 4px 4px; }
     .model-tile .model-info:hover {
       padding: 13px 5px; }
+
+/*MODEL SPECIFIC*/
+#layer-designer {
+  min-height: 500px; }
 
 /*# sourceMappingURL=style.css.map */

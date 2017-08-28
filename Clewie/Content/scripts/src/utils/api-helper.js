@@ -9,7 +9,8 @@ gom.create = {
 
     init: function (context) {
         this.id = gom.randomizer.getString(8);
-        $('[data-gom-model="id"]', context).val(this.id);
+        console.log(this.id, $('[data-gom-model="id"]', context));
+        $('[data-gom-model="id"]', context).html(this.id);
 
         $("#publish-model").on("click", function () {
             var valid = gom.create.prepareData(context);
