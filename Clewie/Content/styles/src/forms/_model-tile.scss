@@ -1,52 +1,71 @@
 ﻿.model-tile-sizer, .model-tile {
-    width: 33.33333%;
+    width: 20%;
 
     @media screen and (max-width: $scr-md) {
-        width: 50%;
+        width: 33.3333%;
     }
 
     @media screen and (max-width: $scr-sm) {
-        width: 100%;
+        width: 50%;
     }
 }
 
 
 .model-tile {
-    /*padding: 20px;*/
+    color: $dark-blue;
+
     .model-border {
-        border: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
     }
 
-    .model-img {
-        background: white;
+    .img-wrapper {
         width: 100%;
-        max-height: 260px;
+        height: 150px;
+        background: white;
+
+        .model-img-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            .model-img {
+                width: 100%;
+                height: 95%;
+            }
+        }
     }
+
+
 
     .model-details {
         padding: 10px 20px;
+        border-top: 1px solid $almost-white;
     }
 
-    a {
-        color: $black;
+
+    .model-header {
+        color: $dark-blue;
+        font-size: 18px;
         text-decoration: none;
     }
 
-    .model-header {
-        font-size: 30px;
+    .model-desc {
+        display: none;
+
+        &.active {
+            display: block;
+        }
     }
 
     .model-info {
         position: absolute;
-        top: 0;
-        right: 5px;
-        padding: 12px 4px;
+        right: 0;
+        top: 10px;
+        padding: 2px 6px;
         background: $dark-blue;
         color: $white;
-        border-radius: 0 0 4px 4px;
-
-        &:hover {
-            padding: 13px 5px;
-        }
+        border-radius: 4px 0 0 4px;
     }
 }

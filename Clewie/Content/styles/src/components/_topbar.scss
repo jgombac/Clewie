@@ -17,21 +17,17 @@
 
     a {
         text-decoration: none;
-        line-height: 55px;
+        line-height: 36px;
         font-weight: bold;
         color: $dark-blue;
         margin: 0 20px;
         text-transform: uppercase;
         letter-spacing: 2px;
-
-        &:hover {
-            color: $blue;
-        }
     }
 
     .navbar-toggle {
-        padding: 10px 12px;
-        margin: 7px 28px;
+        padding: 3px 9px;
+        margin: 4px 20px;
         float: right;
         display: none;
         font-weight: bold;
@@ -60,11 +56,15 @@
     }
 
     .navbar-brand {
-        font-size: 36px;
+        font-size: 24px;
     }
 
     .nav-link {
-        font-size: 20px;
+        font-size: 12px;
+
+        &:hover {
+            color: $blue;
+        }
     }
 
     @media screen and (max-width: $scr-md) {

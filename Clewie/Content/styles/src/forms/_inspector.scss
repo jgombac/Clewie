@@ -1,7 +1,15 @@
-﻿.model-section {
+﻿#api-details {
+
+    @media screen and (max-width: $scr-sm) {
+        text-align: left;
+    }
+}
+
+.model-section {
     padding: 10px 20px;
     font-size: 20px;
     text-align: center;
+
 
     &.inverted {
         background: $dark-blue;
@@ -11,6 +19,10 @@
     .model-item {
         margin: 0 16px;
         vertical-align: top;
+
+        @media screen and (max-width: $scr-sm) {
+            margin: 6px 16px;
+        }
     }
 
     .start-group, .running-group, .status-group {
@@ -22,7 +34,6 @@
 
 
 .start-group {
-    margin-right: 50px;
 
     button {
         background: transparent;
@@ -57,6 +68,12 @@
         background: $dark-blue;
         border-radius: 100%;
         margin: 0 54px 0 44px;
+
+        @media screen and (max-width: $scr-sm) {
+            margin: 0 20px 0 16px;
+            padding: 6px 6px 6px 10px;
+
+        }
     }
 }
 

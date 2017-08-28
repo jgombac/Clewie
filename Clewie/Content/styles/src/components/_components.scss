@@ -1,13 +1,12 @@
 ﻿
 
 label {
-    font-size: 18px;
     color: $bright-blue;
 }
 
 
 .inverted {
-    input {
+    input, textarea {
         color: $white;
         border-bottom: 1px solid $white;
     }
@@ -19,10 +18,10 @@ label {
 }
 
 
-input {
+input, textarea {
     /*background: $almost-white;*/
     height: 32px;
-    font-size: 24px;
+    font-size: 14px;
     color: $dark-blue;
     max-width: 100%;
     border: transparent;

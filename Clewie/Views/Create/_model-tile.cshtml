@@ -1,15 +1,20 @@
 <div class="model-tile">
     <div class="model-border">
         <div class="tile">
-            <a class="model-img--link" href="@Url.Action("Model", new { modelName = "NeuralNetwork" })">
-                <img class="model-img" src="~/Content/assets/images/perceptron.svg" alt="Model image" />
-                <span class="icon icon-info model-info"></span>
-            </a>
-            <div class="model-details">
-                <a class="model-header" href="@Url.Action("Model", new { modelName = "NeuralNetwork" })">
-                    Neural network
+            <div class="img-wrapper">
+                <a class="model-img-link" href="@Url.Action("Model", new { modelName = "NeuralNetwork" })">
+                    <img class="model-img" src="~/Content/assets/images/perceptron.svg" alt="Model image" />
+
                 </a>
-                <div class="model-desc">
+            </div>
+            <div class="model-details anchor">
+
+                    <a class="model-header" href="@Url.Action("Model", new { modelName = "NeuralNetwork" })">
+                        Neural network
+                    </a>
+                    <span class="icon icon-info model-info"></span>
+
+                    <div class="model-desc">
                     Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod,
                     iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.
                 </div>
