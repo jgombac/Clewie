@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e27663bea");
+@import url("/Content/assets/icons/style.css?v15e23e5d83b");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -751,5 +751,17 @@ input[type="file"].file-upload-def {
 /*MODEL SPECIFIC*/
 #layer-designer {
   min-height: 500px; }
+  #layer-designer .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px; }
+  #layer-designer .node text {
+    font: 12px sans-serif; }
+  #layer-designer .node--internal text {
+    text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff; }
+  #layer-designer .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -31,34 +31,7 @@
 </section>
 
 <section id="layer-designer" class="model-section">
-    <table>
-        <thead>
-            <tr>
-                <th>Input</th>
-                <th>Hidden</th>
-                <th>Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <div class="neuron-wrapper"></div>
-                    <div class="neuron-wrapper"></div>
-                    <div class="neuron-wrapper"></div>
-                </td>
-                <td>
-                    <div class="neuron-wrapper"></div>
-                    <div class="neuron-wrapper"></div>
-                    <div class="neuron-wrapper"></div>
-                    <div class="neuron-wrapper"></div>
-                </td>
-                <td>
-                    <div class="neuron-wrapper"></div>
-                    <div class="neuron-wrapper"></div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    
 </section>
 
 
@@ -175,6 +148,7 @@
 
         $(document).ready(function () {
             gom.create.init($("#api-details"));
+            gom.neuralNetwork.init();
         });
     </script>
 
