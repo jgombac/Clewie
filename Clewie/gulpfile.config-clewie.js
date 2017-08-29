@@ -38,6 +38,13 @@
             },
 
             {
+                "build": "library.js",
+                "source": [
+                    path_source_scripts + "plugins/d3.min.js",
+                ]
+            },
+
+            {
                 "build": "init.js",
                 "source": [
                     path_source_scripts + "init.js",

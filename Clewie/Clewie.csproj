@@ -256,7 +256,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\scripts\build\create-model.js" />
     <Content Include="Content\scripts\build\init.js" />
+    <Content Include="Content\scripts\build\library.js" />
     <Content Include="Content\scripts\build\utils.js" />
+    <Content Include="Content\scripts\src\plugins\d3.min.js" />
     <Content Include="Content\scripts\src\init.js" />
     <Content Include="Content\scripts\src\modelScripts\neural-network.js" />
     <Content Include="Content\scripts\src\utils\api-helper.js" />
@@ -306,6 +308,7 @@
     <Content Include="Content\assets\icons\fonts\clewie-icons.ttf" />
     <Content Include="Content\assets\icons\fonts\clewie-icons.woff" />
     <Content Include="Content\styles\src\components\_tile.scss" />
+    <Content Include="Content\styles\src\model-specific\_neural-network.scss" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
