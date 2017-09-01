@@ -21,5 +21,34 @@
         stroke-width: 2px;
     }
 
+    .button rect {
+        stroke: $dark-blue; /* navy 40% */
+        fill: $dark-blue;
+        stroke-width: 1px;
+    }
 
+    .button rect.active {
+        fill: $white;
+    }
+
+    .button rect.active + text {
+        fill: $blue;
+    }
+
+    .button .active, .button .pressed {
+        stop-color: $white;
+        ; /* navy 70% */
+    }
+    /*.button #gradient-stop.active, .button #gradient-stop.pressed {
+        stop-color: #000f2b; 
+    }*/
+    .button text {
+        font-size: 22px;
+        fill: $white;
+        pointer-events: none;
+        text-anchor: middle;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
 }

@@ -258,6 +258,7 @@
     <Content Include="Content\scripts\build\init.js" />
     <Content Include="Content\scripts\build\library.js" />
     <Content Include="Content\scripts\build\utils.js" />
+    <Content Include="Content\scripts\src\plugins\d3-button.js" />
     <Content Include="Content\scripts\src\plugins\d3.min.js" />
     <Content Include="Content\scripts\src\init.js" />
     <Content Include="Content\scripts\src\modelScripts\neural-network.js" />

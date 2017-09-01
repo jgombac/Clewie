@@ -35,12 +35,14 @@
 //    .style("text-anchor", "middle")
 //    .text(function (d) { return d.data.name; });
 
-gom.neuralNetwork = {
+var neuralNetwork = (function () {
 
-    init: function () {
-        var layers = [1, 2, 10, 2, 2, 10, 2, 1];
+    var init = function () {
+
+        var layers = [4, 4, 4, 4];
         var nodes = gom.neuralNetwork.layersToNodes(layers);
         var links = gom.neuralNetwork.layersToLinks(layers);
+        var ui = gom.neuralNetwork.layersToUI(layers);
         // set the dimensions and margins of the diagram
         var margin = { top: 50, right: 90, bottom: 50, left: 90 },
             width = $("#layer-designer").width() - margin.left - margin.right,
@@ -81,6 +83,19 @@ gom.neuralNetwork = {
         node.append("circle")
             .attr("r", 10);
 
+        var button = d3.button()
+            .on('press', function (d, i) { console.log("Pressed", d, i, this.parentNode) })
+            .on('release', function (d, i) { console.log("Released", d, i, this.parentNode) });
+
+        var buttons = g.selectAll('.button')
+            .data(ui)
+            .enter()
+            .append('g')
+            .attr('class', 'button')
+            .call(button);
+
+
+
         var mGroupWidth = $("#nodes-container")[0].getBoundingClientRect().width;
         g.attr("transform", "translate(" + ((svg.attr("width") / 2) - mGroupWidth / 2) + ", 0)");
         $(window).resize(function () {
@@ -92,9 +107,9 @@ gom.neuralNetwork = {
 
         });
 
-    },
+    }
 
-    layersToNodes: function (layers) {
+    var layersToNodes = function (layers) {
         var arr = [],
             vCenter = Math.floor($("#layer-designer").height() / 2),
             x = 0,
@@ -108,7 +123,7 @@ gom.neuralNetwork = {
                 y = vCenter - Math.floor(layers[i] / 2) * mult;
             console.log(y, vCenter, layers[i]);
             for (var j = 0; j < layers[i]; j++) {
-                arr.push({ "name": i + " " + j, x: x, y: y, desc: [{ function(d) { d.selectAll(); } }] });
+                arr.push({ "name": i + " " + j, x: x, y: y });
                 y = y + mult
             }
             y = 0;
@@ -116,22 +131,37 @@ gom.neuralNetwork = {
         }
 
         return arr;
-    },
+    }
 
-    layersToLinks: function (layers) {
+    var layersToLinks = function (layers) {
         var arr = [];
         var x = 0;
-        for (var i = 0; i < layers.length - 1; i++) {           
+        for (var i = 0; i < layers.length - 1; i++) {
             for (var j = 0; j < layers[i]; j++) {
                 var prevSum = layers.slice(0, i + 1).reduce((a, b) => a + b, 0);
-                for (var y = prevSum; y < prevSum + layers[i + 1]; y++) {                    
+                for (var y = prevSum; y < prevSum + layers[i + 1]; y++) {
                     arr.push({ source: x, target: y });
                 }
                 x = x + 1;
             }
         }
         return arr;
-    },
+    }
 
+    var layersToUI = function (layers) {
+        var arr = [],
+            x = 0,
+            y = 50,
+            mult = 40;
 
-}
+        for (var i = 0; i < layers.length; i++) {
+            arr.push({ label: "+", x: x, y: y });
+            x = x + mult * 2;
+        }
+        return arr;
+    }
+
+    return {
+        init: init,
+    }
+});

@@ -41,6 +41,7 @@
                 "build": "library.js",
                 "source": [
                     path_source_scripts + "plugins/d3.min.js",
+                    path_source_scripts + "plugins/d3-button.js",
                 ]
             },
 

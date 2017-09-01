@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e23e5d83b");
+@import url("/Content/assets/icons/style.css?v15e27663bea");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -750,7 +750,10 @@ input[type="file"].file-upload-def {
 
 /*MODEL SPECIFIC*/
 #layer-designer {
-  min-height: 500px; }
+  min-height: 500px;
+  /*.button #gradient-stop.active, .button #gradient-stop.pressed {
+        stop-color: #000f2b; 
+    }*/ }
   #layer-designer .node circle {
     fill: #fff;
     stroke: steelblue;
@@ -763,5 +766,25 @@ input[type="file"].file-upload-def {
     fill: none;
     stroke: #ccc;
     stroke-width: 2px; }
+  #layer-designer .button rect {
+    stroke: #2C3E50;
+    /* navy 40% */
+    fill: #2C3E50;
+    stroke-width: 1px; }
+  #layer-designer .button rect.active {
+    fill: #ECF0F1; }
+  #layer-designer .button rect.active + text {
+    fill: #2980B9; }
+  #layer-designer .button .active, #layer-designer .button .pressed {
+    stop-color: #ECF0F1;
+    /* navy 70% */ }
+  #layer-designer .button text {
+    font-size: 22px;
+    fill: #ECF0F1;
+    pointer-events: none;
+    text-anchor: middle;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; }
 
 /*# sourceMappingURL=style.css.map */
