@@ -24,12 +24,11 @@
                 .attr("height", bbox.height + 2 * padding)
                 .attr('rx', radius)
                 .attr('ry', radius)
-                .on('mouseover', activate)
+                .on('mouseenter', activate)
                 .on('mouseout', deactivate)
-                .on('click', toggle)
+                .on('mousedown', toggle)
+                .on('mouseup', toggle)
 
-            //addShadow.call(g.node(), d, i);
-            //addGradient.call(g.node(), d, i);
         });
     }
 
@@ -94,20 +93,13 @@
     }
 
     function toggle(d, i) {
-        press.call(this, d, i);
-        activate.call(this, d, i);
-        var that = this;
-        setTimeout(function () {
-            release.call(that, d, i);
-            deactivate.call(that, d, i);
-        }, 50);
-        //if (d3.select(this).classed('pressed')) {
-        //    release.call(this, d, i);
-        //    deactivate.call(this, d, i);
-        //} else {
-        //    press.call(this, d, i);
-        //    activate.call(this, d, i);
-        //}
+        if (d3.select(this).classed('pressed')) {
+            release.call(this, d, i);
+            deactivate.call(this, d, i);
+        } else {
+            press.call(this, d, i);
+            activate.call(this, d, i);
+        }
     }
 
     function press(d, i) {

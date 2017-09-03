@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e27663bea");
+@import url("/Content/assets/icons/style.css?v15e23e5d83b");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -750,11 +750,8 @@ input[type="file"].file-upload-def {
 
 /*MODEL SPECIFIC*/
 #layer-designer {
-  min-height: 500px;
-  /*.button #gradient-stop.active, .button #gradient-stop.pressed {
-        stop-color: #000f2b; 
-    }*/ }
-  #layer-designer .node circle {
+  min-height: 500px; }
+  #layer-designer .node {
     fill: #fff;
     stroke: steelblue;
     stroke-width: 3px; }
@@ -766,19 +763,17 @@ input[type="file"].file-upload-def {
     fill: none;
     stroke: #ccc;
     stroke-width: 2px; }
-  #layer-designer .button rect {
+  #layer-designer .button-neuron rect, #layer-designer .button-layer rect {
     stroke: #2C3E50;
-    /* navy 40% */
     fill: #2C3E50;
     stroke-width: 1px; }
-  #layer-designer .button rect.active {
+  #layer-designer .button-neuron rect.active, #layer-designer .button-layer.active {
     fill: #ECF0F1; }
-  #layer-designer .button rect.active + text {
+  #layer-designer .button-neuron rect.active + text, #layer-designer .button-layer rect.active + text {
     fill: #2980B9; }
-  #layer-designer .button .active, #layer-designer .button .pressed {
-    stop-color: #ECF0F1;
-    /* navy 70% */ }
-  #layer-designer .button text {
+  #layer-designer .button-neuron .active, #layer-designer .button-neuron .pressed, #layer-designer .button-layer .active, #layer-designer .button-layer .active {
+    stop-color: #ECF0F1; }
+  #layer-designer .button-neuron text, #layer-designer .button-layer text {
     font-size: 22px;
     fill: #ECF0F1;
     pointer-events: none;

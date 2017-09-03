@@ -1,7 +1,7 @@
 ﻿#layer-designer {
     min-height: 500px;
 
-    .node circle {
+    .node {
         fill: #fff;
         stroke: steelblue;
         stroke-width: 3px;
@@ -21,28 +21,26 @@
         stroke-width: 2px;
     }
 
-    .button rect {
-        stroke: $dark-blue; /* navy 40% */
+    .button-neuron rect, .button-layer rect {
+        stroke: $dark-blue;
         fill: $dark-blue;
         stroke-width: 1px;
     }
 
-    .button rect.active {
+
+    .button-neuron rect.active, .button-layer.active {
         fill: $white;
     }
 
-    .button rect.active + text {
+    .button-neuron rect.active + text, .button-layer rect.active + text {
         fill: $blue;
     }
 
-    .button .active, .button .pressed {
+    .button-neuron .active, .button-neuron .pressed, .button-layer .active, .button-layer .active {
         stop-color: $white;
-        ; /* navy 70% */
     }
-    /*.button #gradient-stop.active, .button #gradient-stop.pressed {
-        stop-color: #000f2b; 
-    }*/
-    .button text {
+
+    .button-neuron text, .button-layer text {
         font-size: 22px;
         fill: $white;
         pointer-events: none;
