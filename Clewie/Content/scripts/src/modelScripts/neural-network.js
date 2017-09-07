@@ -1,53 +1,16 @@
-﻿//var link = svg.selectAll("line.link")
-//data()
-
-// adds the links between the nodes
-//var link = g.selectAll(".link")
-//    .data(nodes.descendants().slice(1))
-//    .enter().append("path")
-//    .attr("class", "link")
-//    .attr("d", function (d) {
-//        return "M" + d.x + "," + d.y
-//            + "C" + d.x + "," + (d.y + d.parent.y) / 2
-//            + " " + d.parent.x + "," + (d.y + d.parent.y) / 2
-//            + " " + d.parent.x + "," + d.parent.y;
-//    });
-
-// adds each node as a group
-//var node = g.selectAll(".node")
-//    .data(nodes)
-//    .enter().append("g")
-//    .attr("class", function (d) {
-//        return "node" +
-//            (d.children ? " node--internal" : " node--leaf");
-//    })
-//    .attr("transform", function (d) {
-//        return "translate(" + d.x + "," + d.y + ")";
-//    });
-
-// adds the circle to the node
-
-
-// adds the text to the node
-//node.append("text")
-//    .attr("dy", ".35em")
-//    .attr("y", function (d) { return d.children ? -20 : 20; })
-//    .style("text-anchor", "middle")
-//    .text(function (d) { return d.data.name; });
-
+﻿
 var neuralNetwork = (function () {
 
-    var margin = { top: 50, right: 90, bottom: 50, left: 90 },
-        width = $("#layer-designer").width() - margin.left - margin.right,
+    var width = $("#layer-designer").width(),
         height = $("#layer-designer").height();
+  
 
-    
-
-    var layers = [1, 1, 2];
+    var layers = [4, 5, 5, 5, 5, 4];
 
     var data = null;
 
-    var g = null;
+    var g = null,
+        svg = null;
     
     var init = function () {
         
@@ -57,31 +20,15 @@ var neuralNetwork = (function () {
             ui: layersToUI(layers),
         };
 
-        
-
-        var svg = d3.select("#layer-designer").append("svg")
-            .attr("width", width + margin.left + margin.right)
+        svg = d3.select("#layer-designer").append("svg")
+            .attr("id", "designer-container")
+            .attr("width", width)
             .attr("height", height);
 
         g = svg.append("g")
             .attr("id", "nodes-container");
 
         initData(data);
-        //update(data);
-
-       
-
-        var mGroupWidth = $("#nodes-container")[0].getBoundingClientRect().width;
-        g.attr("transform", "translate(" + ((svg.attr("width") / 2) - mGroupWidth / 2) + ", 0)");
-        $(window).resize(function () {
-
-
-            width = $("#layer-designer").width() - margin.left - margin.right
-            svg.attr("width", width);
-            g.attr("transform", "translate(" + (width / 2 - mGroupWidth / 2) + ", 0)");
-
-        });
-
     };
 
     var initData = function (data) {
@@ -127,6 +74,17 @@ var neuralNetwork = (function () {
             .append('g')
             .attr('class', 'button-layer')
             .call(button);
+
+        var mGroupWidth = $("#nodes-container")[0].getBoundingClientRect().width;
+        
+        g.attr("transform", "translate(" + (svg.attr("width") - mGroupWidth) / 2 + ", 0)");
+        $(window).resize(function () {
+            width = $("#layer-designer").width();
+            svg.attr("width", width);
+            console.log(width, svg.attr("width"), mGroupWidth, (svg.attr("width") - mGroupWidth) / 2);
+
+            g.attr("transform", "translate(" + (svg.attr("width") - mGroupWidth)*0.7 + ", 0)");
+        });
     };
 
     var update = function (data) {
@@ -145,12 +103,10 @@ var neuralNetwork = (function () {
     };
 
     var updateLayers = function (i, x) {
-        console.log(layers);
         layers[i] += x;
         data.nodes = layersToNodes(layers);
         data.links = layersToLinks(layers);
         data.ui = layersToUI(layers);
-        console.log(layers);
     };
 
     var layersToNodes = function (layers) {
@@ -197,22 +153,15 @@ var neuralNetwork = (function () {
         let x = 0;
         let y = 50;
         let mult = 50;
-        let val = 1;
+
 
         for (var i = 0; i < layers.length; i++) {
-            neuronUI.push({ label: "+", x: x, y: y, index: i , val: val});
+            neuronUI.push({ label: "-", x: x, y: y-20, index: i, val: -1 });
+            neuronUI.push({ label: "+", x: x, y: y+20, index: i, val: 1 });
             x = x + mult * 2;
         }
-        y = height - 20;
-        x = 0;
-        val = -1;
-        for (var i = 0; i < layers.length; i++) {
-            neuronUI.push({ label: "-", x: x, y: y, index: i, val: val });
-            x = x + mult * 2;
-        }
-
-        layerUI.push({ label: "Remove layer", x: -100, y: y, action: "remove" });
-        layerUI.push({ label: "Add layer", x: x + 100, y: y, action: "add" });
+        layerUI.push({ label: "-", x: -100, y: y, action: "remove" });
+        layerUI.push({ label: "+", x: x, y: y, action: "add" });
 
         return { neurons: neuronUI, layers: layerUI };
     };

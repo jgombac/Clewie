@@ -3,7 +3,7 @@
     var dispatch = d3.dispatch('press', 'release');
 
     var padding = 10,
-        radius = 10,
+        radius = 20,
         stdDeviation = 5,
         offsetX = 2,
         offsetY = 4;
@@ -14,16 +14,15 @@
                 .attr('id', 'd3-button' + i)
                 .attr('transform', 'translate(' + d.x + ',' + d.y + ')');
 
-            var text = g.append('text').text(d.label);
+            var text = g.append('text').text(d.label).attr("alignment-baseline", "middle");
             var defs = g.append('defs');
             var bbox = text.node().getBBox();
-            var rect = g.insert('rect', 'text')
+            var rect = g.insert('circle', 'text')
                 .attr("x", bbox.x - padding)
                 .attr("y", bbox.y - padding)
                 .attr("width", bbox.width + 2 * padding)
                 .attr("height", bbox.height + 2 * padding)
-                .attr('rx', radius)
-                .attr('ry', radius)
+                .attr('r', radius)
                 .on('mouseenter', activate)
                 .on('mouseout', deactivate)
                 .on('mousedown', toggle)
@@ -78,7 +77,7 @@
 
     function activate() {
         var gradient = d3.select(this.parentNode).select('linearGradient')
-        d3.select(this.parentNode).select("rect").classed('active', true)
+        d3.select(this.parentNode).select("circle").classed('active', true)
         if (!gradient.node()) return;
         gradient.select('#gradient-start').classed('active', true)
         gradient.select('#gradient-stop').classed('active', true)
@@ -86,7 +85,7 @@
 
     function deactivate() {
         var gradient = d3.select(this.parentNode).select('linearGradient')
-        d3.select(this.parentNode).select("rect").classed('active', false)
+        d3.select(this.parentNode).select("circle").classed('active', false)
         if (!gradient.node()) return;
         gradient.select('#gradient-start').classed('active', false);
         gradient.select('#gradient-stop').classed('active', false);

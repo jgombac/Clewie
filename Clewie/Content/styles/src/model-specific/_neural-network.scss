@@ -21,28 +21,30 @@
         stroke-width: 2px;
     }
 
-    .button-neuron rect, .button-layer rect {
-        stroke: $dark-blue;
-        fill: $dark-blue;
+    .button-neuron circle, .button-layer circle {
+        stroke: $white;
+        fill: $white;
         stroke-width: 1px;
     }
 
 
-    .button-neuron rect.active, .button-layer.active {
+    .button-neuron circle.active, .button-layer.active {
         fill: $white;
     }
 
-    .button-neuron rect.active + text, .button-layer rect.active + text {
+    .button-neuron circle.active + text, .button-layer circle.active + text {
         fill: $blue;
     }
 
     .button-neuron .active, .button-neuron .pressed, .button-layer .active, .button-layer .active {
-        stop-color: $white;
+        stop-color: $dark-blue;
+        /*stroke: $white;
+        fill: $white;*/
     }
 
     .button-neuron text, .button-layer text {
         font-size: 22px;
-        fill: $white;
+        fill: $dark-blue;
         pointer-events: none;
         text-anchor: middle;
         -moz-user-select: none;

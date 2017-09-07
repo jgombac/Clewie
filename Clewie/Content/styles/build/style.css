@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e23e5d83b");
+@import url("/Content/assets/icons/style.css?v15e27663bea");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -763,19 +763,21 @@ input[type="file"].file-upload-def {
     fill: none;
     stroke: #ccc;
     stroke-width: 2px; }
-  #layer-designer .button-neuron rect, #layer-designer .button-layer rect {
-    stroke: #2C3E50;
-    fill: #2C3E50;
+  #layer-designer .button-neuron circle, #layer-designer .button-layer circle {
+    stroke: #ECF0F1;
+    fill: #ECF0F1;
     stroke-width: 1px; }
-  #layer-designer .button-neuron rect.active, #layer-designer .button-layer.active {
+  #layer-designer .button-neuron circle.active, #layer-designer .button-layer.active {
     fill: #ECF0F1; }
-  #layer-designer .button-neuron rect.active + text, #layer-designer .button-layer rect.active + text {
+  #layer-designer .button-neuron circle.active + text, #layer-designer .button-layer circle.active + text {
     fill: #2980B9; }
   #layer-designer .button-neuron .active, #layer-designer .button-neuron .pressed, #layer-designer .button-layer .active, #layer-designer .button-layer .active {
-    stop-color: #ECF0F1; }
+    stop-color: #2C3E50;
+    /*stroke: $white;
+        fill: $white;*/ }
   #layer-designer .button-neuron text, #layer-designer .button-layer text {
     font-size: 22px;
-    fill: #ECF0F1;
+    fill: #2C3E50;
     pointer-events: none;
     text-anchor: middle;
     -moz-user-select: none;
