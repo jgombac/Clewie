@@ -25,6 +25,7 @@
                 "build": "create-model.js",
                 "source": [
                     path_source_scripts + "modelScripts/neural-network.js",
+                    path_source_scripts + "modelScripts/nn-visuals.js",
                 ]
             },
 
