@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e23e5d83b");
+@import url("/Content/assets/icons/style.css?v15e27663bea");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -745,7 +745,8 @@ input[type="file"].file-upload-def {
   display: -ms-flexbox;
   display: flex; }
   .rtable--flip tbody tr:last-child td select {
-    color: #2980B9; }
+    color: #2980B9;
+    border: none; }
 
 /*FORMS*/
 @media screen and (max-width: 560px) {
