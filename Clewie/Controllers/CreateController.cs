@@ -1,10 +1,12 @@
-﻿using Clewie.Models;
+﻿
+using Clewie.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ClewieCore.Data;
 
 namespace Clewie.Controllers
 {
@@ -21,6 +23,15 @@ namespace Clewie.Controllers
         public ActionResult Model(string modelName)
         {
             return View("Models/" + modelName);
+        }
+
+        [HttpPost]
+        [Route("Create/TrainingSet")]
+        public string TrainingSet() {
+            var file = Request.Files[0];
+            Debug.WriteLine(file.FileName);
+            DataFactory df = new DataFactory(file);
+            return df.ArrayToTable(df.ParsedDataset, 3);
         }
 
         //[HttpPost]

@@ -81,6 +81,11 @@
     max-width: 320px;
 }
 
+.file-inspector {
+    display: flex;
+    justify-content: center;
+}
+
 
 .inspector-section {
     border: 1px solid $light-grey;

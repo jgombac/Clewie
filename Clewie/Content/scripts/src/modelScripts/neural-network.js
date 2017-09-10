@@ -29,6 +29,8 @@ var neuralNetwork = (function () {
             .attr("id", "nodes-container");
 
         initData(data);
+
+
     };
 
     var initData = function (data) {

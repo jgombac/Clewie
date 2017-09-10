@@ -34,6 +34,8 @@
                     path_source_scripts + "utils/api-helper.js",
                     path_source_scripts + "utils/topbar.js",
                     path_source_scripts + "utils/randomizer.js",
+                    path_source_scripts + "utils/file-manager.js",
+                    path_source_scripts + "utils/clew.js",
                 ]
             },
 
@@ -50,7 +52,7 @@
                 "source": [
                     path_source_scripts + "init.js",
                 ]
-            }
+            },
         ]
     }
     return config;

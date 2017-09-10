@@ -35,12 +35,50 @@
 </section>
 
 
+<section class="file-inspector">
+    <section class="inspector-section">
+        <div class="inspector-header">
+            <span>Input file</span>
+            <i class="glyphicon glyphicon-info-sign"></i>
+        </div>
+        <div class="container inspector-content">
+
+            <div id="trainingSet" class="input-group">
+                <div><label>Training set</label></div>
+                <label for="file-upload" class="custom-file-upload">
+                    <i class="glyphicon glyphicon-file"></i>Upload file
+                </label>
+                <input class="file-upload-def" data-gom-file="dataset" type="file" />
+            </div>
+
+            <div class="input-group">
+                <label>Column separator</label>
+                <select data-gom-separator="column" class="form-control">
+                    <option value="0">Semicolon ; </option>
+                    <option value="1">Comma , </option>
+                    <option value="2">Dash - </option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Decimal separator</label>
+                <select data-gom-separator="decimal" class="form-control">
+                    <option value="0">Dot . </option>
+                    <option value="1">Comma , </option>
+                </select>
+            </div>
+        </div>
+    </section>
+    <section id="table-viewer"></section>
+</section>
+
+
 
 
 
 
 <div class="model-inspector">
-    <section class="inspector-section">
+    @*<section class="inspector-section">
         <div class="inspector-header">
             <span>Input file</span>
             <i class="glyphicon glyphicon-info-sign"></i>
@@ -52,12 +90,12 @@
                 <label for="file-upload" class="custom-file-upload">
                     <i class="glyphicon glyphicon-file"></i>Upload file
                 </label>
-                <input class="file-upload-def" id="file-upload" type="file" />
+                <input class="file-upload-def" data-gom-file="dataset" type="file" />
             </div>
 
             <div class="input-group">
                 <label>Column separator</label>
-                <select id="column-separator" class="form-control">
+                <select data-gom-separator="column" class="form-control">
                     <option value="0">Semicolon ; </option>
                     <option value="1">Comma , </option>
                     <option value="2">Dash - </option>
@@ -66,7 +104,7 @@
 
             <div class="input-group">
                 <label>Decimal separator</label>
-                <select id="deciamal-separator" class="form-control">
+                <select data-gom-separator="decimal" class="form-control">
                     <option value="0">Dot . </option>
                     <option value="1">Comma , </option>
                 </select>
@@ -75,7 +113,7 @@
 
 
         </div>
-    </section>
+    </section>*@
 
     <section class="inspector-section">
         <div class="inspector-header">
@@ -149,6 +187,10 @@
         $(document).ready(function () {
             gom.create.init($("#api-details"));
             neuralNetwork.init();
+            $("[data-gom-file='dataset']").change(function () {
+                console.log("uploading");
+                gom.fileManager.uploadDataset("#trainingSet");
+            });
         });
     </script>
 
