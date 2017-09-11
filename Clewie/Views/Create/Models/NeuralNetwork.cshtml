@@ -30,47 +30,37 @@
 
 </section>
 
-<section id="layer-designer" class="">
-    
+<section id="layer-designer" class=""></section>
+
+<section class="clearfix model-section flex">
+    <div class="file-inspector">
+        <div id="trainingSet" class="model-item">
+            <label class="label">Training set</label>
+            <input class="file-upload-def" data-gom-file="dataset" type="file" />
+        </div>
+
+        <div class="model-item">
+            <label class="label">Column separator</label>
+            <select data-gom-separator="column" class="form-control">
+                <option value="0">Semicolon ; </option>
+                <option value="1">Comma , </option>
+                <option value="2">Dash - </option>
+            </select>
+        </div>
+
+        <div class="model-item">
+            <label class="label">Decimal separator</label>
+            <select data-gom-separator="decimal" class="form-control">
+                <option value="0">Dot . </option>
+                <option value="1">Comma , </option>
+            </select>
+        </div>
+    </div>
+    <section id="table-viewer" class="model-section"></section>
 </section>
 
 
-<section class="file-inspector">
-    <section class="inspector-section">
-        <div class="inspector-header">
-            <span>Input file</span>
-            <i class="glyphicon glyphicon-info-sign"></i>
-        </div>
-        <div class="container inspector-content">
 
-            <div id="trainingSet" class="input-group">
-                <div><label>Training set</label></div>
-                <label for="file-upload" class="custom-file-upload">
-                    <i class="glyphicon glyphicon-file"></i>Upload file
-                </label>
-                <input class="file-upload-def" data-gom-file="dataset" type="file" />
-            </div>
-
-            <div class="input-group">
-                <label>Column separator</label>
-                <select data-gom-separator="column" class="form-control">
-                    <option value="0">Semicolon ; </option>
-                    <option value="1">Comma , </option>
-                    <option value="2">Dash - </option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label>Decimal separator</label>
-                <select data-gom-separator="decimal" class="form-control">
-                    <option value="0">Dot . </option>
-                    <option value="1">Comma , </option>
-                </select>
-            </div>
-        </div>
-    </section>
-    <section id="table-viewer"></section>
-</section>
 
 
 
@@ -79,41 +69,41 @@
 
 <div class="model-inspector">
     @*<section class="inspector-section">
-        <div class="inspector-header">
-            <span>Input file</span>
-            <i class="glyphicon glyphicon-info-sign"></i>
-        </div>
-        <div class="container inspector-content">
-
-            <div class="input-group">
-                <div><label>Training set</label></div>
-                <label for="file-upload" class="custom-file-upload">
-                    <i class="glyphicon glyphicon-file"></i>Upload file
-                </label>
-                <input class="file-upload-def" data-gom-file="dataset" type="file" />
+            <div class="inspector-header">
+                <span>Input file</span>
+                <i class="glyphicon glyphicon-info-sign"></i>
             </div>
+            <div class="container inspector-content">
 
-            <div class="input-group">
-                <label>Column separator</label>
-                <select data-gom-separator="column" class="form-control">
-                    <option value="0">Semicolon ; </option>
-                    <option value="1">Comma , </option>
-                    <option value="2">Dash - </option>
-                </select>
+                <div class="input-group">
+                    <div><label>Training set</label></div>
+                    <label for="file-upload" class="custom-file-upload">
+                        <i class="glyphicon glyphicon-file"></i>Upload file
+                    </label>
+                    <input class="file-upload-def" data-gom-file="dataset" type="file" />
+                </div>
+
+                <div class="input-group">
+                    <label>Column separator</label>
+                    <select data-gom-separator="column" class="form-control">
+                        <option value="0">Semicolon ; </option>
+                        <option value="1">Comma , </option>
+                        <option value="2">Dash - </option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Decimal separator</label>
+                    <select data-gom-separator="decimal" class="form-control">
+                        <option value="0">Dot . </option>
+                        <option value="1">Comma , </option>
+                    </select>
+                </div>
+
+
+
             </div>
-
-            <div class="input-group">
-                <label>Decimal separator</label>
-                <select data-gom-separator="decimal" class="form-control">
-                    <option value="0">Dot . </option>
-                    <option value="1">Comma , </option>
-                </select>
-            </div>
-
-
-
-        </div>
-    </section>*@
+        </section>*@
 
     <section class="inspector-section">
         <div class="inspector-header">

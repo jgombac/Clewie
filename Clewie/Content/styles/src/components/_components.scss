@@ -5,15 +5,21 @@ label {
 }
 
 
+
+
 .inverted {
     input, textarea {
         color: $white;
-        border-bottom: 1px solid $white;
+        /*border-bottom: 1px solid $white;*/
     }
 
 
     label {
         color: $white-blue;
+    }
+
+    select {
+        color: $white;
     }
 }
 
@@ -25,7 +31,7 @@ input, textarea {
     color: $dark-blue;
     max-width: 100%;
     border: transparent;
-    border-bottom: 1px solid $dark-blue;
+    /*border-bottom: 1px solid $dark-blue;*/
     padding: 0 2px;
     background: transparent;
 
@@ -37,6 +43,12 @@ input, textarea {
         background: transparent;
         color: $dark-grey;
     }
+}
+
+select {
+    border: none;
+    background: transparent !important;
+    color: $white;
 }
 
 input[type="file"].file-upload-def {

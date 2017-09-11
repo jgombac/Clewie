@@ -10,6 +10,17 @@
     font-size: 20px;
     text-align: center;
 
+    &.clearfix {
+        clear: both;
+        padding: 0;
+        margin: 0;
+    }
+
+    &.flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 
     &.inverted {
         background: $dark-blue;
@@ -19,6 +30,7 @@
     .model-item {
         margin: 0 16px;
         vertical-align: top;
+        text-align: left;
 
         @media screen and (max-width: $scr-sm) {
             margin: 6px 16px;
@@ -82,8 +94,12 @@
 }
 
 .file-inspector {
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    background: $dark-blue;
+    padding: 10px;
+    color: $white;
 }
 
 

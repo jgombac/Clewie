@@ -1,7 +1,7 @@
 ﻿
 var neuralNetwork = (function () {
 
-    var layers = [4, 5, 5, 5, 5, 4];
+    var layers = [4, 5, 3];
 
     var init = function (context) {
 
