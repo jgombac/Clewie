@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Web;
 using System.IO;
 
+
 namespace ClewieCore.Data
 {
     public class DataFactory {
@@ -22,9 +23,29 @@ namespace ClewieCore.Data
             StreamReader reader = new StreamReader(file.InputStream);
             while(!reader.EndOfStream) {
                 var line = reader.ReadLine();
-                rows.Add(line.Split(','));
+                rows.Add(line.Split(';'));
             }
             return rows.ToArray();
+        }
+
+        public Object ArrayToObject(string[][] arr, int length) {
+            var obj = new { headers = new object[arr[0].Length], data = new string[length][] };
+            for (int i = 0; i < arr[0].Length; i++) {
+                obj.headers[i] = new { title = arr[0][i] };
+            }
+            for (int i = 1; i < ((length < arr.Length) ? length : arr.Length); i++) {
+                obj.data[i - 1] = new string[arr[i].Length];
+                for (int j = 0; j < arr[i].Length; j++)
+                    obj.data[i - 1][j] = arr[i][j];
+            }
+
+            string[] selects = new string[obj.data[0].Length];
+            for (int i = 0; i < selects.Length; i++) {
+                var attr = "data-gom-type='" + i + "'";
+                selects[i] = DataTypeSelect(attr, obj.data[0][i]);
+            }
+            obj.data[obj.data.Length-1] = selects;
+            return obj;
         }
 
         public string ArrayToTable(string[][] arr, int? length) {
@@ -47,11 +68,10 @@ namespace ClewieCore.Data
             }
 
             //Data type select
-            var options = new string[] { "numeric", "nominal" };
             sb.Append("<tr>");
-            for (int i = 0; i < arr[0].Length; i++) {
+            for (int i = 0; i < arr[1].Length; i++) {
                 var attr = "data-gom-type='" + i + "'";
-                sb.Append("<td>" + Dropdown(attr, options) + "</td>");
+                sb.Append("<td>" + DataTypeSelect(attr, arr[1][i]) + "</td>");
             }
             sb.Append("</tr>");
 
@@ -60,12 +80,14 @@ namespace ClewieCore.Data
             return sb.ToString();
         }
 
-        public string Dropdown(string attr, string[] options) {
+        public string DataTypeSelect(string attr, string value) {
             StringBuilder sb = new StringBuilder();
+            double result = Double.NaN;
+            var isNumeric = Double.TryParse(value, out result);
+            Debug.WriteLine(value + " " + isNumeric.ToString());
             sb.Append("<select " + attr + ">");
-            for (int i = 0; i < options.Length; i++) {
-                sb.Append("<option value='" + i + "'>" + options[i] + "</option>");
-            }
+            sb.Append("<option value='0' " + ((isNumeric) ? "selected" : "") +">numeric</option>");
+            sb.Append("<option value='1' " + ((!isNumeric) ? "selected" : "") + ">nominal</option>");
             sb.Append("</select>");
             return sb.ToString();
         }

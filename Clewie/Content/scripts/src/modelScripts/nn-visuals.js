@@ -30,9 +30,6 @@
 
         g = canvas.append("g")
             .attr("id", "nodes-container");
-
-
-        console.log(canvas, g);
         
         draw();
     }

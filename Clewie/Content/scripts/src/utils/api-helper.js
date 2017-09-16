@@ -9,12 +9,10 @@ gom.create = {
 
     init: function (context) {
         this.id = gom.randomizer.getString(8);
-        console.log(this.id, $('[data-gom-model="id"]', context));
         $('[data-gom-model="id"]', context).html(this.id);
 
         $("#publish-model").on("click", function () {
             var valid = gom.create.prepareData(context);
-            console.log(valid);
         });
     },
 
@@ -30,7 +28,6 @@ gom.create = {
     validate: function (model) {
         for (var property in model) {
             if (model.hasOwnProperty(property)) {
-                console.log(property);
                 if (model[property].length == 0) {
                     return false;
                 }

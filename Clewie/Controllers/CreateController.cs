@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ClewieCore.Data;
 
+
 namespace Clewie.Controllers
 {
     public class CreateController : Controller
@@ -27,11 +28,17 @@ namespace Clewie.Controllers
 
         [HttpPost]
         [Route("Create/TrainingSet")]
-        public string TrainingSet() {
+        public JsonResult TrainingSet() {
             var file = Request.Files[0];
             Debug.WriteLine(file.FileName);
             DataFactory df = new DataFactory(file);
-            return df.ArrayToTable(df.ParsedDataset, 3);
+            return Json(df.ArrayToObject(df.ParsedDataset, 3));
+        }
+
+        [HttpPost]
+        [Route("Create/UpdateDataRoles")]
+        public JsonResult UpdateDataRoles(DataRolesModel model) {
+            return Json(model);
         }
 
         //[HttpPost]

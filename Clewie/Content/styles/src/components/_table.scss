@@ -46,11 +46,21 @@
     text-align: center;
     background: $dark-blue;
     color: $white;
+    cursor: pointer;
+
+    &[data-gom-role="target"] {
+        background: $blue;
+
+        &:before {
+            content: "\2716";
+            margin-right: 2px;
+        }
+    }
 }
 
 .rtable th,
 .rtable td {
-    padding: 6px 12px;
+    padding: 6px 16px;
     border: 1px solid #d9d7ce;
 }
 
@@ -83,11 +93,13 @@
 .rtable--flip td,
 .rtable--flip th {
     display: block;
+    height: 100%;
 }
 
 .rtable--flip th {
     text-align: right;
 }
+
 
 .rtable--flip td {
     background-image: none !important;
@@ -100,11 +112,11 @@
 }
 
 .rtable tbody tr:last-child td {
-    padding: 0;
-    height: 100%;
     display: flex;
-
+    padding: 0;
     select {
+        width: 100%;
+        height: 100%;
         color: $blue;
         border: none;
     }

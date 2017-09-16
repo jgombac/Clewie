@@ -5,7 +5,23 @@ label {
 }
 
 
+.grid {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 10px;
 
+
+
+    &.grid__1-2 {
+        max-width: 50%;
+    }
+
+    &.grid__2-3 {
+        max-width: 66.6666%
+    }
+
+}
 
 .inverted {
     input, textarea {

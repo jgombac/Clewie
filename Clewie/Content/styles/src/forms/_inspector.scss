@@ -35,6 +35,10 @@
         @media screen and (max-width: $scr-sm) {
             margin: 6px 16px;
         }
+
+        &.right {
+            text-align: right;
+        }
     }
 
     .start-group, .running-group, .status-group {
@@ -100,6 +104,7 @@
     background: $dark-blue;
     padding: 10px;
     color: $white;
+    width: 100%;
 }
 
 

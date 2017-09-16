@@ -22,6 +22,10 @@
     display: block;
     text-align: left;
     font-size: 14px;
+
+    &.right {
+        text-align: right;
+    }
 }
 
 .form-control {

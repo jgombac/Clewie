@@ -19,6 +19,7 @@ gom.clew = {
             url: url,
             data: data,
             contentType: false,
+            dataType: "json",
             processData: false,
             async: true,
             cache: false,
@@ -30,8 +31,11 @@ gom.clew = {
         return gom.clew.call("POST", "");
     },
 
-
     uploadDataset: function (data) {
         return gom.clew.fileCall("POST", "/Create/TrainingSet", data);
-    } 
+    },
+
+    uploadDataRoles: function (data) {
+        return gom.clew.call("POST", "/Create/UpdateDataRoles", data);
+    }
 }
