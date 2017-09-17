@@ -26,7 +26,11 @@ label {
 .inverted {
     input, textarea {
         color: $white;
-        /*border-bottom: 1px solid $white;*/
+
+        &[type="text"], textarea {
+        border-bottom: 1px solid $white;
+
+        }
     }
 
 

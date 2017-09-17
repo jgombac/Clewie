@@ -238,7 +238,6 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\APIModel.cs" />
-    <Compile Include="Models\DataRolesModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -374,6 +373,10 @@
     <ProjectReference Include="..\ClewieCore.Data\ClewieCore.Data.csproj">
       <Project>{26fc2766-bc0c-4ae5-b92e-1578e9502fcf}</Project>
       <Name>ClewieCore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClewieCore.Models\ClewieCore.Models.csproj">
+      <Project>{D83763D1-D594-44F7-97E8-7443F1008867}</Project>
+      <Name>ClewieCore.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

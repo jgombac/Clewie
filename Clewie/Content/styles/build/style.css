@@ -545,8 +545,9 @@ label {
     max-width: 66.6666%; }
 
 .inverted input, .inverted textarea {
-  color: #ECF0F1;
-  /*border-bottom: 1px solid $white;*/ }
+  color: #ECF0F1; }
+  .inverted input[type="text"], .inverted input textarea, .inverted textarea[type="text"], .inverted textarea textarea {
+    border-bottom: 1px solid #ECF0F1; }
 
 .inverted label {
   color: #9fd9ff; }
@@ -855,23 +856,13 @@ input[type="file"].file-upload-def {
   max-width: 320px; }
 
 .file-inspector {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: column;
-      -ms-flex-flow: column;
-          flex-flow: column;
-  background: #2C3E50;
-  padding: 10px;
-  color: #ECF0F1;
-  width: 100%; }
+  /*display: inline-flex;
+    justify-content: flex-start;
+    flex-flow: column;
+    background: $dark-blue;
+    padding: 10px;
+    color: $white;
+    width: 100%;*/ }
 
 .inspector-section {
   border: 1px solid #C5C3C6; }
@@ -949,8 +940,33 @@ input[type="file"].file-upload-def {
         padding: 10px 0;
     }*/ }
 
+#btn-wrapper {
+  width: 100%;
+  min-height: 80px; }
+  #btn-wrapper .button-neuron circle, #btn-wrapper .button-layer circle {
+    stroke: #ECF0F1;
+    fill: #ECF0F1;
+    stroke-width: 1px; }
+  #btn-wrapper .button-neuron circle.active, #btn-wrapper .button-layer.active {
+    fill: #ECF0F1; }
+  #btn-wrapper .button-neuron circle.active + text, #btn-wrapper .button-layer circle.active + text {
+    fill: #2980B9; }
+  #btn-wrapper .button-neuron .active, #btn-wrapper .button-neuron .pressed, #btn-wrapper .button-layer .active, #btn-wrapper .button-layer .active {
+    stop-color: #2C3E50;
+    /*stroke: $white;
+        fill: $white;*/ }
+  #btn-wrapper .button-neuron text, #btn-wrapper .button-layer text {
+    font-size: 22px;
+    fill: #2C3E50;
+    pointer-events: none;
+    text-anchor: middle;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; }
+
 #layer-designer {
-  min-height: 500px; }
+  min-height: 500px;
+  width: 100%; }
   #layer-designer .node {
     fill: #fff;
     stroke: steelblue;
@@ -963,25 +979,5 @@ input[type="file"].file-upload-def {
     fill: none;
     stroke: #ccc;
     stroke-width: 2px; }
-  #layer-designer .button-neuron circle, #layer-designer .button-layer circle {
-    stroke: #ECF0F1;
-    fill: #ECF0F1;
-    stroke-width: 1px; }
-  #layer-designer .button-neuron circle.active, #layer-designer .button-layer.active {
-    fill: #ECF0F1; }
-  #layer-designer .button-neuron circle.active + text, #layer-designer .button-layer circle.active + text {
-    fill: #2980B9; }
-  #layer-designer .button-neuron .active, #layer-designer .button-neuron .pressed, #layer-designer .button-layer .active, #layer-designer .button-layer .active {
-    stop-color: #2C3E50;
-    /*stroke: $white;
-        fill: $white;*/ }
-  #layer-designer .button-neuron text, #layer-designer .button-layer text {
-    font-size: 22px;
-    fill: #2C3E50;
-    pointer-events: none;
-    text-anchor: middle;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none; }
 
 /*# sourceMappingURL=style.css.map */

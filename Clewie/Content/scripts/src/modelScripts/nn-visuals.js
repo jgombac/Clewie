@@ -7,7 +7,10 @@
         height = 0;
 
     var canvas = null,
-        g = null;
+        mainG = null;
+
+    var btnCanvas = null,
+        btnG = null;
 
     var data = null;
 
@@ -22,14 +25,24 @@
         height = $("#layer-designer").height();
 
         data = initVisualData(layers);
+        console.log(data);
+
 
         canvas = d3.select("#layer-designer").append("svg")
             .attr("id", "designer-container")
             .attr("width", width)
             .attr("height", height);
 
-        g = canvas.append("g")
+        mainG = canvas.append("g")
             .attr("id", "nodes-container");
+
+        btnCanvas = d3.select("#btn-wrapper").append("svg")
+            .attr("id", "btn-canvas")
+            .attr("width", width)
+            .attr("height", 100);
+
+        btnG = btnCanvas.append("g")
+            .attr("id", "btn-container");
         
         draw();
     }
@@ -58,12 +71,13 @@
     } 
 
     var update = function () {
-        g.selectAll("*").remove();
+        mainG.selectAll("*").remove();
+        btnG.selectAll("*").remove();
         draw();
     }
 
     var draw = function () {
-        var link = g.selectAll(".link")
+        var link = mainG.selectAll(".link")
             .data(data.links)
             .enter().append("path")
             .attr("class", "link")
@@ -80,7 +94,7 @@
                     + " " + target.x + "," + target.y;
             });
 
-        var node = g.selectAll(".node")
+        var node = mainG.selectAll(".node")
             .data(data.nodes)
             .enter().append("circle")
             .attr("r", 10)
@@ -89,7 +103,7 @@
                 return "translate(" + d.x + "," + d.y + ")";
             });
 
-        var neuronBtns = g.selectAll('.button-neuron')
+        var neuronBtns = btnG.selectAll('.button-neuron')
             .data(data.ui.neurons)
             .enter()
             .append('g')
@@ -99,26 +113,39 @@
             .call(button);
 
 
-        var layerBtns = g.selectAll('.button-layer')
+        var layerBtns = btnG.selectAll('.button-layer')
             .data(data.ui.layers)
             .enter()
             .append('g')
             .attr('class', 'button-layer')
             .call(button);
 
-        var mGroupWidth = $("#nodes-container")[0].getBoundingClientRect().width;
+        var mainWidth = $("#nodes-container")[0].getBoundingClientRect().width,
+            mainHeight = $("#nodes-container")[0].getBoundingClientRect().height,
+            btnWidth = $("#btn-container")[0].getBoundingClientRect().width,
+            btnHeight = $("#btn-container")[0].getBoundingClientRect().height;
 
-        g.attr("transform", "translate(" + (canvas.attr("width") - mGroupWidth) / 2 + ", 0)");
+        btnG.attr("transform", "translate(" + (btnCanvas.attr("width") - btnWidth) * 0.5 + ", 0)");
+        mainG.attr("transform", "translate(" + (canvas.attr("width") - mainWidth) * 0.5 + ", " + (mainHeight * 0.5) + ")");
+        
+        console.log(btnHeight, mainHeight, canvas.attr("height"));
         $(window).resize(function () {
-            width = $("#layer-designer").width();
-            canvas.attr("width", width);
-            g.attr("transform", "translate(" + (canvas.attr("width") - mGroupWidth) * 0.7 + ", 0)");
+            setTimeout(function () {
+                width = $("#layer-designer").width();
+
+                canvas.attr("width", width);
+                canvas.attr("height", mainHeight);
+                btnCanvas.attr("width", width);
+                btnG.attr("transform", "translate(" + (btnCanvas.attr("width") - btnWidth) * 0.5 + ", 0)");
+                mainG.attr("transform", "translate(" + (canvas.attr("width") - mainWidth) * 0.5 + ", " + (mainHeight * 0.5) + ")");
+
+            }, 250);
         });
     }
 
     var layersToNodes = function (layers) {
         let arr = [];
-        let vCenter = Math.floor($("#layer-designer").height() / 2);
+        let vCenter = 0;//Math.floor($("#designer-container").height() / 2);
         let x = 0;
         let y = 0;
         let mult = 50;
@@ -163,11 +190,12 @@
 
 
         for (var i = 0; i < layers.length; i++) {
+            x = x + mult * 2;
             neuronUI.push({ label: "-", x: x, y: y - 20, index: i, val: -1 });
             neuronUI.push({ label: "+", x: x, y: y + 20, index: i, val: 1 });
-            x = x + mult * 2;
         }
-        layerUI.push({ label: "-", x: -100, y: y, action: "remove" });
+        x = x + mult * 2;
+        layerUI.push({ label: "-", x: 0, y: y, action: "remove" });
         layerUI.push({ label: "+", x: x, y: y, action: "add" });
 
         return { neurons: neuronUI, layers: layerUI };

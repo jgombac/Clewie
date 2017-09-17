@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clewie", "Clewie\Clewie.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClewieCore.Data", "ClewieCore.Data\ClewieCore.Data.csproj", "{26FC2766-BC0C-4AE5-B92E-1578E9502FCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClewieCore.Models", "ClewieCore.Models\ClewieCore.Models.csproj", "{D83763D1-D594-44F7-97E8-7443F1008867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClewieCore.Learning", "ClewieCore.Learning\ClewieCore.Learning.csproj", "{2CDB2FFF-02FF-4199-A2CB-1122CAA29B53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{26FC2766-BC0C-4AE5-B92E-1578E9502FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26FC2766-BC0C-4AE5-B92E-1578E9502FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26FC2766-BC0C-4AE5-B92E-1578E9502FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D83763D1-D594-44F7-97E8-7443F1008867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D83763D1-D594-44F7-97E8-7443F1008867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D83763D1-D594-44F7-97E8-7443F1008867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D83763D1-D594-44F7-97E8-7443F1008867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CDB2FFF-02FF-4199-A2CB-1122CAA29B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CDB2FFF-02FF-4199-A2CB-1122CAA29B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CDB2FFF-02FF-4199-A2CB-1122CAA29B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CDB2FFF-02FF-4199-A2CB-1122CAA29B53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

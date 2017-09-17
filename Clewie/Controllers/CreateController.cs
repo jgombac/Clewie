@@ -7,7 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ClewieCore.Data;
-
+using ClewieCore.Models;
 
 namespace Clewie.Controllers
 {
@@ -32,13 +32,16 @@ namespace Clewie.Controllers
             var file = Request.Files[0];
             Debug.WriteLine(file.FileName);
             DataFactory df = new DataFactory(file);
-            return Json(df.ArrayToObject(df.ParsedDataset, 3));
+            Session["dataFactory"] = df;
+            return Json(df.DataSampleObject(2));
         }
 
         [HttpPost]
         [Route("Create/UpdateDataRoles")]
-        public JsonResult UpdateDataRoles(DataRolesModel model) {
-            return Json(model);
+        public string UpdateDataRoles(DataTypesModel model) {
+            DataFactory df = Session["dataFactory"] as DataFactory;
+            var numerized = df.NumerizeData(model);
+            return df.LogArray(numerized, 5) + "\n" + df.LogArray(Normalize.MinMax(numerized), 5);
         }
 
         //[HttpPost]
