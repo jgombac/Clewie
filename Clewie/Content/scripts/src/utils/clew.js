@@ -31,6 +31,10 @@ gom.clew = {
         return gom.clew.call("POST", "");
     },
 
+    uploadParameters: function (data) {
+        return gom.clew.call("POST", "/Create/UploadParameters", data);
+    },
+
     uploadDataset: function (data) {
         return gom.clew.fileCall("POST", "/Create/TrainingSet", data);
     },

@@ -374,6 +374,10 @@
       <Project>{26fc2766-bc0c-4ae5-b92e-1578e9502fcf}</Project>
       <Name>ClewieCore.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ClewieCore.Learning\ClewieCore.Learning.csproj">
+      <Project>{2CDB2FFF-02FF-4199-A2CB-1122CAA29B53}</Project>
+      <Name>ClewieCore.Learning</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClewieCore.Models\ClewieCore.Models.csproj">
       <Project>{D83763D1-D594-44F7-97E8-7443F1008867}</Project>
       <Name>ClewieCore.Models</Name>

@@ -43,5 +43,11 @@
     <Compile Include="NeuralNetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClewieCore.Data\ClewieCore.Data.csproj">
+      <Project>{26FC2766-BC0C-4AE5-B92E-1578E9502FCF}</Project>
+      <Name>ClewieCore.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

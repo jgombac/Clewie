@@ -1,13 +1,8 @@
-﻿
-using Clewie.Models;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Web;
+﻿using System.Diagnostics;
 using System.Web.Mvc;
 using ClewieCore.Data;
 using ClewieCore.Models;
+using ClewieCore.Learning;
 
 namespace Clewie.Controllers
 {
@@ -42,6 +37,16 @@ namespace Clewie.Controllers
             DataFactory df = Session["dataFactory"] as DataFactory;
             var numerized = df.NumerizeData(model);
             return df.LogArray(numerized, 5) + "\n" + df.LogArray(Normalize.MinMax(numerized), 5);
+        }
+
+        [HttpPost]
+        [Route("Create/UploadParameters")]
+        public string UploadParameters (NeuralNetworkParameters model)
+        {
+            Debug.WriteLine(model.Layers.ToString());
+            var layers = model.Layers;
+            var nn = new NeuralNetwork(layers);
+            return nn.WeightsToString();
         }
 
         //[HttpPost]
