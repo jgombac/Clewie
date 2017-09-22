@@ -37,7 +37,8 @@ gom.fileManager = {
                         gom.fileManager.uploadDataRoles();
                     }
                 });
-
+                neuralNetwork.setParameter("features", response.headers);
+                console.log(neuralNetwork.features);
                 $("[data-gom-type]").change(function () {
                     gom.fileManager.uploadDataRoles();
                 });
@@ -45,6 +46,7 @@ gom.fileManager = {
             })
             .fail(function () { console.log("fail"); });
     },
+
 
     uploadDataRoles: function () {
         var data = {
@@ -57,8 +59,22 @@ gom.fileManager = {
         }
         gom.clew.uploadDataRoles(data)
             .done(function (response) {
-                console.log(response);
+                console.log("oldLayers", neuralNetwork.layers);
+                var layers = neuralNetwork.layers;
+                layers[0] = response.inputs;
+                layers[layers.length - 1] = response.outputs;
+                neuralNetwork.setFixedLayers(layers);
+                //$("#numerized-table").DataTable({
+                //    data: response.sample,
+                //    columns: neuralNetwork.features,
+                //    paging: false,
+                //    searching: false,
+                //    info: false,
+                //    ordering: false,
+                //});
+                console.log(response.sample);
             })
-            .fail(function () { console.log("fail"); })
+            .fail(function () { console.log("fail"); });
+
     },
 }

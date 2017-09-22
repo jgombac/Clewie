@@ -264,6 +264,7 @@
     <Content Include="Content\scripts\src\plugins\d3.min.js" />
     <Content Include="Content\scripts\src\init.js" />
     <Content Include="Content\scripts\src\modelScripts\neural-network.js" />
+    <Content Include="Content\scripts\src\plugins\datatables.js" />
     <Content Include="Content\scripts\src\plugins\datatables.min.js" />
     <Content Include="Content\scripts\src\utils\api-helper.js" />
     <Content Include="Content\scripts\src\utils\clew.js" />

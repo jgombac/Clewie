@@ -24,15 +24,13 @@ label {
 }
 
 .inverted {
-    input, textarea {
+    [type="text"], [type="number"], textarea {
         color: $white;
-
-        &[type="text"], textarea {
-        border-bottom: 1px solid $white;
-
-        }
     }
 
+    [type="text"], [type="number"], textarea {
+        border-bottom: 1px solid $white;
+    }
 
     label {
         color: $white-blue;
@@ -44,14 +42,14 @@ label {
 }
 
 
-input, textarea {
+input[type="text"], input[type="number"], textarea {
     /*background: $almost-white;*/
     height: 32px;
     font-size: 14px;
     color: $dark-blue;
     max-width: 100%;
     border: transparent;
-    /*border-bottom: 1px solid $dark-blue;*/
+    border-bottom: 1px solid $dark-blue;
     padding: 0 2px;
     background: transparent;
 
@@ -68,7 +66,7 @@ input, textarea {
 select {
     border: none;
     background: transparent !important;
-    color: $white;
+    color: $dark-blue;
 }
 
 input[type="file"].file-upload-def {

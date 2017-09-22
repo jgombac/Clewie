@@ -7,7 +7,7 @@
 
 
 
-<div class="file-inspector model-section inverted">
+<div class="file-inspector model-section">
     <div id="trainingSet" class="model-item inline">
         <label class="label">Training set</label>
         <input class="file-upload-def" data-gom-file="dataset" type="file" />
@@ -31,7 +31,30 @@
     </div>
 </div>
 
-<table id="table-viewer" class="rtable rtable--flip"></table>
+<section class="data-inspector">
+    <table id="table-viewer" class="rtable rtable--flip"></table>
+    <table id="numerized-table" class="rtable rtable--flip"></table>
+</section>
+
+
+<section class="model-section inverted">
+    <div class="model-item inline">
+        <label class="label">Max Epochs</label>
+        <input type="number" value="" />
+    </div>
+    <div class="model-item inline">
+        <label class="label">Learning rate</label>
+        <input type="number" value="" />
+    </div>
+    <div class="model-item inline">
+        <label class="label">Momentum</label>
+        <input type="number" value="" />
+    </div>
+    <div class="model-item inline">
+        <label class="label">Weight Decay</label>
+        <input type="number" value="" />
+    </div>
+</section>
 
 <section class="model-section">
 

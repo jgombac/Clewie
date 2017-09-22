@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e23e5d83b");
+@import url("/Content/assets/icons/style.css?v15e27663bea");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -544,10 +544,11 @@ label {
   .grid.grid__2-3 {
     max-width: 66.6666%; }
 
-.inverted input, .inverted textarea {
+.inverted [type="text"], .inverted [type="number"], .inverted textarea {
   color: #ECF0F1; }
-  .inverted input[type="text"], .inverted input textarea, .inverted textarea[type="text"], .inverted textarea textarea {
-    border-bottom: 1px solid #ECF0F1; }
+
+.inverted [type="text"], .inverted [type="number"], .inverted textarea {
+  border-bottom: 1px solid #ECF0F1; }
 
 .inverted label {
   color: #9fd9ff; }
@@ -555,26 +556,26 @@ label {
 .inverted select {
   color: #ECF0F1; }
 
-input, textarea {
+input[type="text"], input[type="number"], textarea {
   /*background: $almost-white;*/
   height: 32px;
   font-size: 14px;
   color: #2C3E50;
   max-width: 100%;
   border: transparent;
-  /*border-bottom: 1px solid $dark-blue;*/
+  border-bottom: 1px solid #2C3E50;
   padding: 0 2px;
   background: transparent; }
-  input:focus, textarea:focus {
+  input[type="text"]:focus, input[type="number"]:focus, textarea:focus {
     outline: none !important; }
-  input:disabled, textarea:disabled {
+  input[type="text"]:disabled, input[type="number"]:disabled, textarea:disabled {
     background: transparent;
     color: #777577; }
 
 select {
   border: none;
   background: transparent !important;
-  color: #ECF0F1; }
+  color: #2C3E50; }
 
 input[type="file"].file-upload-def {
   /*display: none;*/ }

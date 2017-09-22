@@ -28,7 +28,7 @@ namespace ClewieCore.Data
             return rows.ToArray();
         }
 
-        public double[][] NumerizeData(DataTypesModel dataRoles) {
+        public object NumerizeData(DataTypesModel dataRoles) {
             //key: index of nominal value, values: distinct nominal values
             Dictionary<int, string[]> nominals = new Dictionary<int, string[]>();
             //Calculate required length of new data array
@@ -78,7 +78,9 @@ namespace ClewieCore.Data
                 output[i - 1] = row.ToArray();
             }
             NumerizedDataset = output;
-            return output;
+            int outputs = (nominals.ContainsKey(dataRoles.Target)) ? nominals[dataRoles.Target].Length : 1;
+            int inputs = output[0].Length - outputs;
+            return new { inputs = inputs, outputs = outputs, sample = NumerizedDataset[0] };
         }
 
         public Object DataSampleObject(int length) {

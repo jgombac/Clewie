@@ -56,19 +56,35 @@
     } 
 
     var updateLayers = function (i, x) {
+        //if layers are locked, dont modify inputs and outputs
+        if (neuralNetwork.locked && (i == 0 || i == layers.length - 1))
+            return;
+        //layer must contain atleast one neuroncd
+        if (layers[i] <= 1 && x == -1)
+            return;
         layers[i] += x;
         data = initVisualData(layers);
         neuralNetwork.updateLayers(layers);
     }
 
     var modifyLayers = function (action) {
+        //dont cant remove any layers if there are only 2
+        if (layers.length <= 2 && action == "remove")
+            return;
+        //if layers are locked insert a layer before the end, otherwise to the end
         if (action == "add")
-            layers.push(1);
+            (neuralNetwork.locked) ? layers.splice(layers.length - 1, 0, 1) : layers.push(1);
+        //remove a layer before the end if layers are locked
         else if (action == "remove")
-            layers.pop();
+            (neuralNetwork.locked) ? layers.splice(layers.length-2, 1) : layers.pop();
         data = initVisualData(layers);
         neuralNetwork.updateLayers(layers);
     } 
+
+    var updateVisuals = function (layers) {
+        data = initVisualData(layers);
+        update();
+    }
 
     var update = function () {
         mainG.selectAll("*").remove();
@@ -213,6 +229,7 @@
 
     return {
         init: init,
+        updateVisuals: updateVisuals,
     }
     
 })();

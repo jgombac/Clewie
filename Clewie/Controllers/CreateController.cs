@@ -33,19 +33,17 @@ namespace Clewie.Controllers
 
         [HttpPost]
         [Route("Create/UpdateDataRoles")]
-        public string UpdateDataRoles(DataTypesModel model) {
+        public JsonResult UpdateDataRoles(DataTypesModel model) {
             DataFactory df = Session["dataFactory"] as DataFactory;
-            var numerized = df.NumerizeData(model);
-            return df.LogArray(numerized, 5) + "\n" + df.LogArray(Normalize.MinMax(numerized), 5);
+            var fixedStructure = df.NumerizeData(model);
+            return Json(fixedStructure);
         }
 
         [HttpPost]
         [Route("Create/UploadParameters")]
         public string UploadParameters (NeuralNetworkParameters model)
         {
-            Debug.WriteLine(model.Layers.ToString());
-            var layers = model.Layers;
-            var nn = new NeuralNetwork(layers);
+            var nn = new NeuralNetwork(model.Layers);
             return nn.WeightsToString();
         }
 
