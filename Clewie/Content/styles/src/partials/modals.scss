@@ -1,0 +1,207 @@
+﻿/*
+    MODAL SETUP
+    -------------------------------------------------
+    All setup for modal is done here, including sizes
+*/
+
+$z-modal-1: 2000;
+$z-modal-2: 2100;
+$z-modal-3: 2200;
+$z-modal-4: 2300;
+$z-modal-5: 2400;
+
+$modal-xs: 300px;
+$modal-sm: 500px;
+$modal-md: 700px;
+$modal-lg: 900px;
+$modal-fs: 1100px;
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    outline: 0;
+    // -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    background-color: rgba(black,.8);
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: rgba(black, 0.8);
+
+    @media screen and (min-width: 1920px), screen and (min-height: 1080px) {
+        background-size: cover;
+    }
+
+    &-body {
+        padding: 25px;
+        color: grey;
+        background: #ffffff;
+
+        @media screen and (min-width: $scr-md) {
+            background: $white;
+        }
+    }
+
+    &-dialog {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+
+        @media screen and (min-width: $scr-md) {
+            height: auto;
+        }
+    }
+
+    &-content {
+        position: relative;
+        display: table;
+        width: 100%;
+        height: auto;
+        /*height: auto;*/
+        margin: 0 auto;
+        padding: 15px;
+        background: rgba($dark-blue, .85);
+
+        .close-button {
+            position: absolute;
+            top: 31px;
+            right: 20px;
+            z-index: $z-modal-5 + 1;
+            cursor: pointer;
+            opacity: 0.9;
+            font-size: 20px;
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        header, .modal-header, .modal-body, footer, .modal-footer {
+            margin: 0 auto;
+        }
+
+        header, .modal-header {
+            position: relative;
+            margin-bottom: 27px;
+            margin-top: 13px;
+            text-align: left;
+
+            .modal-heading {
+                display: inline-block;
+                color: white;
+                font-weight: 700;
+                padding: 0 40px 0 0;
+                font-size: 24px;
+                line-height: 28px;
+            }
+        }
+
+        form {
+            padding-top: 16px;
+            background: white;
+
+            &.padding-clear {
+                padding-top: 0;
+            }
+        }
+
+        .modal-body {
+            h2,
+            p {
+                color: grey;
+            }
+        }
+
+        footer, .modal-footer {
+            margin-top: 10px;
+
+            &--center {
+                text-align: center;
+            }
+        }
+    }
+
+
+    .modal-content {
+        max-width: $modal-sm;
+        margin: 30px auto;
+
+        header, .modal-header, .modal-body, footer, .modal-footer {
+            max-width: $modal-sm;
+
+            @media screen and (min-width: $scr-md) {
+                max-width: unset;
+            }
+        }
+    }
+
+    &.modal-fs {
+        .modal-content {
+            @media screen and (min-width: $modal-fs) {
+                max-width: 100%;
+                margin: 30px auto;
+            }
+        }
+    }
+
+    &.fade {
+        opacity: 0;
+        -moz-transition: opacity .2s linear;
+        -o-transition: opacity .2s linear;
+        -webkit-transition: opacity .2s linear;
+        transition: opacity .2s linear;
+
+        .modal-dialog {
+            -moz-transition: transform .3s ease-out;
+            -o-transition: transform .3s ease-out;
+            -webkit-transition: transform .3s ease-out;
+            transition: transform .3s ease-out;
+            -moz-transform: translate(0, 25%);
+            -ms-transform: translate(0, 25%);
+            -o-transform: translate(0, 25%);
+            -webkit-transform: translate(0, 25%);
+            transform: translate(0, 25%);
+        }
+    }
+
+    &.modal-open {
+        opacity: 1;
+
+
+        .modal-dialog {
+            -moz-transform: translate(0,0);
+            -ms-transform: translate(0,0);
+            -o-transform: translate(0,0);
+            -webkit-transform: translate(0,0);
+            transform: translate(0,0);
+        }
+    }
+
+    .right {
+        text-align: right;
+    }
+}
+
+.modal-level-1,
+.modal-level-2,
+.modal-level-3,
+.modal-level-4,
+.modal-level-5 {
+    overflow: hidden;
+    padding-right: 17px;
+
+    #header {
+        right: 17px;
+    }
+}
+
+.modal .form-element-wrapper {
+    display: table;
+    width: 100%;
+    margin-bottom: 16px;
+}
+

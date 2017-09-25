@@ -13,8 +13,15 @@ var neuralNetwork = (function () {
             uploadParameters();
             console.log(layers);
         });
-
+        setDefaultParameters();
     };
+
+    var setDefaultParameters = function () {
+        $("#max-epochs").val(1000);
+        $("#learning-rate").val(0.01);
+        $("#momentum").val(0.01);
+        $("#weight-decay").val(0.01);
+    }
 
     var setParameter = function (param, data) {
         if (param == "features")
@@ -41,10 +48,10 @@ var neuralNetwork = (function () {
     var uploadParameters = function () {
         var data = {
             layers: layers,
-            maxEpochs: 2000,
-            learningRate: 0.01,
-            momentum: 0.001,
-            weightDecay: 0.01,
+            maxEpochs: parseFloat($("#max-epochs").val()),
+            learningRate: parseFloat($("#learning-rate").val()),
+            momentum: parseFloat($("#momentum").val()),
+            weightDecay: parseFloat($("#weight-decay").val()),
         }
         gom.clew.uploadParameters(data)
             .done(function (response) {

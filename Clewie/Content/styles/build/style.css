@@ -556,6 +556,14 @@ label {
 .inverted select {
   color: #ECF0F1; }
 
+input[type=number] {
+  -moz-appearance: textfield; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
 input[type="text"], input[type="number"], textarea {
   /*background: $almost-white;*/
   height: 32px;
@@ -930,6 +938,142 @@ input[type="file"].file-upload-def {
     background: #2C3E50;
     color: #ECF0F1;
     border-radius: 4px 0 0 4px; }
+
+/*
+    MODAL SETUP
+    -------------------------------------------------
+    All setup for modal is done here, including sizes
+*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  outline: 0;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.8); }
+  @media screen and (min-width: 1920px), screen and (min-height: 1080px) {
+    .modal {
+      background-size: cover; } }
+  .modal-body {
+    padding: 25px;
+    color: grey;
+    background: #ffffff; }
+    @media screen and (min-width: 800px) {
+      .modal-body {
+        background: #ECF0F1; } }
+  .modal-dialog {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0; }
+    @media screen and (min-width: 800px) {
+      .modal-dialog {
+        height: auto; } }
+  .modal-content {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    /*height: auto;*/
+    margin: 0 auto;
+    padding: 15px;
+    background: rgba(44, 62, 80, 0.85); }
+    .modal-content .close-button {
+      position: absolute;
+      top: 31px;
+      right: 20px;
+      z-index: 2401;
+      cursor: pointer;
+      opacity: 0.9;
+      font-size: 20px; }
+      .modal-content .close-button:hover {
+        opacity: 0.5; }
+    .modal-content header, .modal-content .modal-header, .modal-content .modal-body, .modal-content footer, .modal-content .modal-footer {
+      margin: 0 auto; }
+    .modal-content header, .modal-content .modal-header {
+      position: relative;
+      margin-bottom: 27px;
+      margin-top: 13px;
+      text-align: left; }
+      .modal-content header .modal-heading, .modal-content .modal-header .modal-heading {
+        display: inline-block;
+        color: white;
+        font-weight: 700;
+        padding: 0 40px 0 0;
+        font-size: 24px;
+        line-height: 28px; }
+    .modal-content form {
+      padding-top: 16px;
+      background: white; }
+      .modal-content form.padding-clear {
+        padding-top: 0; }
+    .modal-content .modal-body h2,
+    .modal-content .modal-body p {
+      color: grey; }
+    .modal-content footer, .modal-content .modal-footer {
+      margin-top: 10px; }
+      .modal-content footer--center, .modal-content .modal-footer--center {
+        text-align: center; }
+  .modal .modal-content {
+    max-width: 500px;
+    margin: 30px auto; }
+    .modal .modal-content header, .modal .modal-content .modal-header, .modal .modal-content .modal-body, .modal .modal-content footer, .modal .modal-content .modal-footer {
+      max-width: 500px; }
+      @media screen and (min-width: 800px) {
+        .modal .modal-content header, .modal .modal-content .modal-header, .modal .modal-content .modal-body, .modal .modal-content footer, .modal .modal-content .modal-footer {
+          max-width: unset; } }
+  @media screen and (min-width: 1100px) {
+    .modal.modal-fs .modal-content {
+      max-width: 100%;
+      margin: 30px auto; } }
+  .modal.fade {
+    opacity: 0;
+    -o-transition: opacity .2s linear;
+    -webkit-transition: opacity .2s linear;
+    transition: opacity .2s linear; }
+    .modal.fade .modal-dialog {
+      -o-transition: transform .3s ease-out;
+      -webkit-transition: transform .3s ease-out;
+      -webkit-transition: -webkit-transform .3s ease-out;
+      transition: -webkit-transform .3s ease-out;
+      transition: transform .3s ease-out;
+      transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+      -ms-transform: translate(0, 25%);
+      -webkit-transform: translate(0, 25%);
+      transform: translate(0, 25%); }
+  .modal.modal-open {
+    opacity: 1; }
+    .modal.modal-open .modal-dialog {
+      -ms-transform: translate(0, 0);
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0); }
+  .modal .right {
+    text-align: right; }
+
+.modal-level-1,
+.modal-level-2,
+.modal-level-3,
+.modal-level-4,
+.modal-level-5 {
+  overflow: hidden;
+  padding-right: 17px; }
+  .modal-level-1 #header,
+  .modal-level-2 #header,
+  .modal-level-3 #header,
+  .modal-level-4 #header,
+  .modal-level-5 #header {
+    right: 17px; }
+
+.modal .form-element-wrapper {
+  display: table;
+  width: 100%;
+  margin-bottom: 16px; }
 
 /*MODEL SPECIFIC*/
 #table-viewer {

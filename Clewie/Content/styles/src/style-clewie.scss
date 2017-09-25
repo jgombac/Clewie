@@ -18,5 +18,7 @@
 @import "forms/inspector";
 @import "forms/model-tile";
 
+@import "partials/modals.scss";
+
 /*MODEL SPECIFIC*/
 @import "model-specific/neural-network";

@@ -43,9 +43,13 @@
             {
                 "build": "library.js",
                 "source": [
+                    path_source_scripts + "plugins/modal.js",
+                    path_source_scripts + "plugins/jsrender.js",
+                    path_source_scripts + "plugins/datatables.js",
                     path_source_scripts + "plugins/d3.min.js",
-                    path_source_scripts + "plugins/d3-button.js",
-                    //path_source_scripts + "plugins/datatables.js",
+                    path_source_scripts + "plugins/d3-button.js",  
+                    //path_source_scripts + "plugin/jquery-ui.min.js",
+                    
                 ]
             },
 

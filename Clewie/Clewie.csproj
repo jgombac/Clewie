@@ -230,6 +230,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CreateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JsTemplatesController.cs" />
     <Compile Include="Controllers\ModelController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -266,6 +267,9 @@
     <Content Include="Content\scripts\src\modelScripts\neural-network.js" />
     <Content Include="Content\scripts\src\plugins\datatables.js" />
     <Content Include="Content\scripts\src\plugins\datatables.min.js" />
+    <Content Include="Content\scripts\src\plugins\jquery-ui.min.js" />
+    <Content Include="Content\scripts\src\plugins\jsrender.js" />
+    <Content Include="Content\scripts\src\plugins\modal.js" />
     <Content Include="Content\scripts\src\utils\api-helper.js" />
     <Content Include="Content\scripts\src\utils\clew.js" />
     <Content Include="Content\scripts\src\utils\file-manager.js" />
@@ -315,6 +319,7 @@
     <Content Include="Content\assets\icons\fonts\clewie-icons.woff" />
     <Content Include="Content\styles\src\components\_tile.scss" />
     <Content Include="Content\styles\src\model-specific\_neural-network.scss" />
+    <Content Include="Content\styles\src\partials\modals.scss" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -350,6 +355,7 @@
     <Content Include="Views\Create\Partials\_ApiDetails.cshtml" />
     <Content Include="Views\Shared\_scripts.cshtml" />
     <Content Include="Views\Shared\_styles.cshtml" />
+    <Content Include="Views\JsTemplates\TrainingDatasetDesigner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
