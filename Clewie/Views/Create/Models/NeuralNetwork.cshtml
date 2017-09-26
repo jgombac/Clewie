@@ -8,6 +8,7 @@
 
 
 <div class="file-inspector model-section">
+    <button data-gom-toggle="modal" data-gom-target="datasetDesigner">Dataset designer</button>
     <div id="trainingSet" class="model-item inline">
         <label class="label">Training set</label>
         <input class="file-upload-def" data-gom-file="dataset" type="file" />
@@ -32,10 +33,10 @@
     </div>
 </div>
 
-<section class="data-inspector">
+@*<section class="data-inspector">
     <table id="table-viewer" class="rtable rtable--flip"></table>
     <table id="numerized-table" class="rtable rtable--flip"></table>
-</section>
+</section>*@
 
 
 <section class="model-section inverted">
@@ -158,6 +159,9 @@
             $("[data-gom-file='dataset']").change(function () {
                 gom.fileManager.uploadDataset("#trainingSet");
             });
+
+            $("body").prepend($.render.TrainingDatasetDesigner());
+            $("#datasetDesigner").modal();
 
         });
     </script>

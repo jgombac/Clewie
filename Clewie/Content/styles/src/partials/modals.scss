@@ -23,48 +23,25 @@ $modal-fs: 1100px;
     bottom: 0;
     right: 0;
     display: none;
-    outline: 0;
-    // -webkit-overflow-scrolling: touch;
+    outline: none;
     overflow: hidden;
-    background-color: rgba(black,.8);
+    background-color: rgba(white, .8);
     overflow-x: hidden;
     overflow-y: auto;
-    background: rgba(black, 0.8);
+    background: rgba(white, 0.8);
 
-    @media screen and (min-width: 1920px), screen and (min-height: 1080px) {
-        background-size: cover;
-    }
-
-    &-body {
-        padding: 25px;
-        color: grey;
-        background: #ffffff;
-
-        @media screen and (min-width: $scr-md) {
-            background: $white;
-        }
-    }
 
     &-dialog {
-        position: relative;
-        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 100%;
-        margin: 0;
-
-        @media screen and (min-width: $scr-md) {
-            height: auto;
-        }
     }
 
     &-content {
-        position: relative;
-        display: table;
-        width: 100%;
-        height: auto;
-        /*height: auto;*/
-        margin: 0 auto;
-        padding: 15px;
-        background: rgba($dark-blue, .85);
+        background: white;
+        box-shadow: 1px 1px 8px 0px rgba(33, 33, 33, 0.3);
+
 
         .close-button {
             position: absolute;
@@ -82,13 +59,30 @@ $modal-fs: 1100px;
 
         header, .modal-header, .modal-body, footer, .modal-footer {
             margin: 0 auto;
+            color: $dark-blue;
+
+            [data-gom-dismiss="modal"] {
+                cursor: pointer;
+                line-height: 24px;
+                font-size: 24px;
+                float: right;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
 
         header, .modal-header {
             position: relative;
             margin-bottom: 27px;
             margin-top: 13px;
+            line-height: 24px;
             text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+
 
             .modal-heading {
                 display: inline-block;
@@ -128,7 +122,10 @@ $modal-fs: 1100px;
 
     .modal-content {
         max-width: $modal-sm;
-        margin: 30px auto;
+        width: 100%;
+        margin: 0 8px;
+        padding: 8px 20px 20px;
+        border-radius: 12px 12px 6px 6px;
 
         header, .modal-header, .modal-body, footer, .modal-footer {
             max-width: $modal-sm;

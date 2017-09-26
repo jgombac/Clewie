@@ -12,10 +12,10 @@
             modalIndexZ;
 
         //// Check if there is a buton for this modal
-        //if (!modalBtnShow.attr('data-gt-target') && typeof callback === 'number') {
-        //    modalLevel = callback;
-        //}
-
+        if (!modalBtnShow.attr('data-gom-target') && typeof callback === 'number') {
+            modalLevel = callback;
+        }
+        modalLevel = (modalLevel == undefined) ? 1 : modalLevel;
 
 
         // Z-INDEX - check and fallback
