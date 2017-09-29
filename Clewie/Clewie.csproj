@@ -320,6 +320,7 @@
     <Content Include="Content\styles\src\components\_tile.scss" />
     <Content Include="Content\styles\src\model-specific\_neural-network.scss" />
     <Content Include="Content\styles\src\partials\modals.scss" />
+    <Content Include="Content\styles\src\components\_table.scss" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

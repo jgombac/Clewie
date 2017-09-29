@@ -9,13 +9,36 @@
                 Dataset designer
                 <span data-gom-dismiss="modal" class="glyphicon glyphicon-remove"></span>
             </div>
-            <section class="data-inspector">
-                <table id="table-viewer" class="rtable rtable--flip"></table>
-                <table id="numerized-table" class="rtable rtable--flip"></table>
-            </section>
+            <div class="file-inspector model-section">
+                    <div id="trainingSet" class="model-item inline">
+                        <label class="label">Training set</label>
+                        <input class="file-upload-def" data-gom-file="dataset" type="file" />
+                    </div>
+                    <div class="model-item inline">
+                        <label class="label">Column separator</label>
+                        <select id="column-separator" data-gom-separator="column" class="form-control">
+                            <option value="0">Semicolon ; </option>
+                            <option value="1">Comma , </option>
+                            <option value="2">Dash - </option>
+                            <option value="3">Tab \t</option>
+                        </select>
+                    </div>
 
-            Content
-        </div>
+                    <div class="model-item inline">
+                        <label class="label">Decimal separator</label>
+                        <select data-gom-separator="decimal" class="form-control">
+                            <option value="0">Dot . </option>
+                            <option value="1">Comma , </option>
+                        </select>
+                    </div>
+                </div>
+
+                <section class="data-inspector">
+                    <table id="table-viewer" class="rtable"></table>
+                    <table id="numerized-table" class="rtable rtable--flip"></table>
+                </section>
+
+            </div>
     </div>
 
 </div>

@@ -120,20 +120,14 @@ $modal-fs: 1100px;
     }
 
 
+
     .modal-content {
-        max-width: $modal-sm;
-        width: 100%;
-        margin: 0 8px;
+        max-width: 100%;
+        /*width: 100%;*/
+        margin: 0 10px;
         padding: 8px 20px 20px;
         border-radius: 12px 12px 6px 6px;
 
-        header, .modal-header, .modal-body, footer, .modal-footer {
-            max-width: $modal-sm;
-
-            @media screen and (min-width: $scr-md) {
-                max-width: unset;
-            }
-        }
     }
 
     &.modal-fs {

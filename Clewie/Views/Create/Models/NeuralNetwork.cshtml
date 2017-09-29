@@ -8,15 +8,11 @@
 
 
 <div class="file-inspector model-section">
-    <button data-gom-toggle="modal" data-gom-target="datasetDesigner">Dataset designer</button>
-    <div id="trainingSet" class="model-item inline">
-        <label class="label">Training set</label>
-        <input class="file-upload-def" data-gom-file="dataset" type="file" />
-    </div>
+    <button class="btn btn-primary btn-md" data-gom-toggle="modal" data-gom-target="datasetDesigner">Dataset designer</button>
 
-    <div class="model-item inline">
+    @*<div class="model-item inline">
         <label class="label">Column separator</label>
-        <select data-gom-separator="column" class="form-control">
+        <select id="column-separator" data-gom-separator="column" class="form-control">
             <option value="0">Semicolon ; </option>
             <option value="1">Comma , </option>
             <option value="2">Dash - </option>
@@ -30,13 +26,8 @@
             <option value="0">Dot . </option>
             <option value="1">Comma , </option>
         </select>
-    </div>
+    </div>*@
 </div>
-
-@*<section class="data-inspector">
-    <table id="table-viewer" class="rtable rtable--flip"></table>
-    <table id="numerized-table" class="rtable rtable--flip"></table>
-</section>*@
 
 
 <section class="model-section inverted">
@@ -91,76 +82,19 @@
 
 
 
-
-
-
-
-
-@*<div class="model-inspector">
-    <section class="inspector-section">
-        <div class="inspector-header">
-            Layer parameters
-            <i class="glyphicon glyphicon-info-sign"></i>
-        </div>
-        <div class="container inspector-content">
-            <div class="input-group">
-                <label for="input-layer">Input</label>
-                <input id="input-layer" class="form-control" type="number" />
-            </div>
-            <div class="input-group">
-                <label for="hidden-layer">Hidden</label>
-                <input id="hidden-layer" class="form-control" type="number" />
-            </div>
-            <div class="input-group">
-                <label for="output-layer">Output</label>
-                <input id="output-layer" class="form-control" type="number" />
-            </div>
-        </div>
-    </section>
-    <section class="inspector-section">
-        <div class="inspector-header">
-            Learning parameters
-            <i class="glyphicon glyphicon-info-sign"></i>
-        </div>
-        <div class="container inspector-content">
-            <div class="input-group">
-                <label for="max-epochs">Max epochs</label>
-                <input id="max-epochs" class="form-control" type="number" />
-            </div>
-            <div class="input-group">
-                <label for="learning-rate">Learning rate</label>
-                <input id="learning-rate" class="form-control" type="number" />
-            </div>
-
-            <div class="input-group">
-                <label for="momentum">Momentum</label>
-                <input id="momentum" class="form-control" type="number" />
-            </div>
-            <div class="input-group">
-                <label for="weight-decay">Weight decay</label>
-                <input id="weight-decay" class="form-control" type="number" />
-            </div>
-
-        </div>
-    </section>
-
-
-</div>*@
-
-
-
-
 @section Scripts {
     <script>
 
         $(document).ready(function () {
             gom.create.init($("#api-details"));
             neuralNetwork.init();
+
+            $("body").prepend($.render.TrainingDatasetDesigner());
+
             $("[data-gom-file='dataset']").change(function () {
                 gom.fileManager.uploadDataset("#trainingSet");
             });
 
-            $("body").prepend($.render.TrainingDatasetDesigner());
             $("#datasetDesigner").modal();
 
         });

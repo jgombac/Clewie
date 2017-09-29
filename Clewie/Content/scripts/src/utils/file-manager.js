@@ -21,8 +21,9 @@ gom.fileManager = {
                     searching: false,
                     info: false,
                     ordering: false,
+                    autoWidth: false,
                 });
-
+                //$("select[data-gom-type]").selectmenu();
                 $("th", "#table-viewer").last().attr("data-gom-role", "target");
                 $("th", "#table-viewer").last().attr("data-gom-index", $("th", "#table-viewer").last().index());
 

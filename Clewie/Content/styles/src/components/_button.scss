@@ -1,0 +1,41 @@
+﻿.btn {
+    border-radius: 8px;
+    border-width: 1px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-style: none;
+
+}
+
+.btn-primary {
+    color: $white;
+    background: $dark-blue;
+
+    &:hover {
+        color: $dark-blue;
+        background: $almost-white;
+    }
+}
+
+.btn-default {
+    color: $dark-blue;
+    background: $almost-white;
+
+    &:hover {
+        color: $white;
+        background: $dark-blue;
+    }
+}
+
+.btn-lg {
+    padding: 14px 24px;
+}
+
+.btn-md {
+    padding: 10px 20px;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+}
