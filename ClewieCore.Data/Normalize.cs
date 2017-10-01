@@ -27,6 +27,15 @@ namespace ClewieCore.Data {
             return result;
         }
 
+        /// <summary>
+        /// Returns a number in range based on previous range
+        /// </summary>
+        /// <param name="x">input</param>
+        /// <param name="min">new minimum</param>
+        /// <param name="max">new maximum</param>
+        /// <param name="colMin">previous minimum</param>
+        /// <param name="colMax">previous maximum</param>
+        /// <returns>double</returns>
         public static double PlaceInRange(double x, double min, double max, double colMin, double colMax) {
             return (x - colMin) * (max - min) / (colMax - colMin) + min;
         }
