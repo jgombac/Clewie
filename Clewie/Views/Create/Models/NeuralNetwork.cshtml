@@ -9,24 +9,7 @@
 
 <div class="file-inspector model-section">
     <button class="btn btn-primary btn-md" data-gom-toggle="modal" data-gom-target="datasetDesigner">Dataset designer</button>
-
-    @*<div class="model-item inline">
-        <label class="label">Column separator</label>
-        <select id="column-separator" data-gom-separator="column" class="form-control">
-            <option value="0">Semicolon ; </option>
-            <option value="1">Comma , </option>
-            <option value="2">Dash - </option>
-            <option value="3">Tab \t</option>
-        </select>
-    </div>
-
-    <div class="model-item inline">
-        <label class="label">Decimal separator</label>
-        <select data-gom-separator="decimal" class="form-control">
-            <option value="0">Dot . </option>
-            <option value="1">Comma , </option>
-        </select>
-    </div>*@
+    <button class="btn btn-default btn-sm" data-gom-toggle="modal" data-gom-target="sandboxModal">Sandbox</button>
 </div>
 
 
@@ -86,15 +69,16 @@
     <script>
 
         $(document).ready(function () {
+            $("body").prepend($.render.TrainingDatasetDesigner());
+            $("body").prepend($.render.SandboxModal());
             gom.create.init($("#api-details"));
             neuralNetwork.init();
-
-            $("body").prepend($.render.TrainingDatasetDesigner());
+            sandbox.init($("#sandboxModal"));
 
             $("[data-gom-file='dataset']").change(function () {
                 gom.fileManager.uploadDataset("#trainingSet");
             });
-
+            $("#sandboxModal").modal();
             $("#datasetDesigner").modal();
 
         });

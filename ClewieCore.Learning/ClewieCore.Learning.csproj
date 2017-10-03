@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="NeuralNetwork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClewieCore.Data\ClewieCore.Data.csproj">

@@ -17,6 +17,7 @@ namespace Clewie.Controllers
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine(RenderTemplate("TrainingDatasetDesigner", "TrainingDatasetDesigner"));
+            sb.AppendLine(RenderTemplate("SandboxModal", "SandboxModal"));
 
             tempObj = sb.ToString();
 

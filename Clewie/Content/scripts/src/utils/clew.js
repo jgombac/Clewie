@@ -41,5 +41,10 @@ gom.clew = {
 
     uploadDataRoles: function (data) {
         return gom.clew.call("POST", "/Create/UpdateDataRoles", data);
+    },
+
+    runSandbox: function (data) {
+        return gom.clew.call("POST", "/Create/TestPrediction", data);
     }
+    
 }

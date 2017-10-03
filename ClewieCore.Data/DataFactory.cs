@@ -13,6 +13,7 @@ namespace ClewieCore.Data
         
         public string[][] ParsedDataset { get; set; }
         public double[][] NumerizedDataset { get; set; }
+        public string[][] DataTypes { get; set; }
 
         public DataFactory(HttpPostedFileBase file) {
             ParsedDataset = FileRows(file);

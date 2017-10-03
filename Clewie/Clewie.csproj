@@ -260,6 +260,7 @@
     <Content Include="Content\scripts\build\init.js" />
     <Content Include="Content\scripts\build\library.js" />
     <Content Include="Content\scripts\build\utils.js" />
+    <Content Include="Content\scripts\src\modelScripts\nn-sandbox.js" />
     <Content Include="Content\scripts\src\modelScripts\nn-visuals.js" />
     <Content Include="Content\scripts\src\plugins\d3-button.js" />
     <Content Include="Content\scripts\src\plugins\d3.min.js" />
@@ -321,6 +322,7 @@
     <Content Include="Content\styles\src\model-specific\_neural-network.scss" />
     <Content Include="Content\styles\src\partials\modals.scss" />
     <Content Include="Content\styles\src\components\_table.scss" />
+    <Content Include="Content\styles\src\components\_button.scss" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -357,6 +359,7 @@
     <Content Include="Views\Shared\_scripts.cshtml" />
     <Content Include="Views\Shared\_styles.cshtml" />
     <Content Include="Views\JsTemplates\TrainingDatasetDesigner.cshtml" />
+    <Content Include="Views\JsTemplates\SandboxModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

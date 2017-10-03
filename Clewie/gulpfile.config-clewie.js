@@ -26,6 +26,7 @@
                 "source": [
                     path_source_scripts + "modelScripts/neural-network.js",
                     path_source_scripts + "modelScripts/nn-visuals.js",
+                    path_source_scripts + "modelScripts/nn-sandbox.js",
                 ]
             },
 

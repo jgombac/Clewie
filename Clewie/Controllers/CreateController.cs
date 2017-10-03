@@ -47,6 +47,35 @@ namespace Clewie.Controllers
             return nn.WeightsToString();
         }
 
+        [HttpPost]
+        [Route("Create/TestPrediction")]
+        public JsonResult TestPrediction()
+        {
+            var test1 = new TestCase{
+                Layers = new int[] { 2, 3, 2 },
+                WeightValue = 0.5,
+                BiasValue = 1,
+                Input = new double[] { 6, 4 }
+            };
+
+            var test2 = new TestCase{
+                Layers = new int[] { 3, 4, 3 },
+                WeightValue = 0.6,
+                BiasValue = 0.6,
+                Input = new double[] { 8, 2, 4 }
+            };
+
+            var nn1 = new NeuralNetwork(test1);
+            var nn2 = new NeuralNetwork(test2);
+
+            return Json(new {
+                test1 = test1,
+                output1 = nn1.ComputeOutputs(test1.Input),
+                test2 = test2,
+                output2 = nn2.ComputeOutputs(test2.Input),
+            });
+        }
+
         //[HttpPost]
         //[Route("Publish/{id}")]
         //public ActionResult Publish(string id, APIModel model)

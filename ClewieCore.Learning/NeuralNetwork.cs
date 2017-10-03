@@ -24,15 +24,28 @@ namespace ClewieCore.Learning
             InitNetwork();
         }
 
+        public NeuralNetwork(TestCase test)
+        {
+            this.layers = test.Layers;
+            neurons = Randomizer.EmptyMatrix(layers);
+
+            weights = Randomizer.Matrices(layers, test.WeightValue);
+            biases = Randomizer.Biases(layers.Skip(1).ToArray(), test.BiasValue);
+
+            gradients = Randomizer.EmptyMatrix(layers.Skip(1).ToArray());
+            prevWeightsDelta = Randomizer.EmptyMatrices(layers);
+            prevBiasesDelta = Randomizer.EmptyMatrix(layers.Skip(1).ToArray());
+        }
+
         private void InitNetwork()
         {
             //Only weights and biases need to have a starting value, others can be empty
             neurons = Randomizer.EmptyMatrix(layers);
-            //weights = Randomizer.RandomMatrices(layers);
-            //biases = Randomizer.RandomMatrix(layers.Skip(1).ToArray());
+            weights = Randomizer.RandomMatrices(layers);
+            biases = Randomizer.RandomMatrix(layers.Skip(1).ToArray());
 
-            weights = Randomizer.Matrices(layers, 0.5);
-            biases = Randomizer.Biases(layers.Skip(1).ToArray(), 1);
+            //weights = Randomizer.Matrices(layers, 0.5);
+            //biases = Randomizer.Biases(layers.Skip(1).ToArray(), 1);
 
             gradients = Randomizer.EmptyMatrix(layers.Skip(1).ToArray());
             prevWeightsDelta = Randomizer.EmptyMatrices(layers);
