@@ -25,8 +25,6 @@
         height = $("#layer-designer").height();
 
         data = initVisualData(layers);
-        console.log(data);
-
 
         canvas = d3.select("#layer-designer").append("svg")
             .attr("id", "designer-container")
@@ -144,7 +142,6 @@
         btnG.attr("transform", "translate(" + (btnCanvas.attr("width") - btnWidth) * 0.5 + ", 0)");
         mainG.attr("transform", "translate(" + (canvas.attr("width") - mainWidth) * 0.5 + ", " + (mainHeight * 0.5) + ")");
         
-        console.log(btnHeight, mainHeight, canvas.attr("height"));
         $(window).resize(function () {
             setTimeout(function () {
                 width = $("#layer-designer").width();

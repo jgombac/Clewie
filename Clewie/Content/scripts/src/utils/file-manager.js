@@ -14,6 +14,8 @@ gom.fileManager = {
 
         gom.clew.uploadDataset(form)
             .done(function (response) {
+                neuralNetwork.setParameter("features", response.headers);
+                console.log(response.headers);
                 var table = $("#table-viewer").DataTable({
                     data: response.data,
                     columns: response.headers,
@@ -23,7 +25,6 @@ gom.fileManager = {
                     ordering: false,
                     autoWidth: false,
                 });
-                //$("select[data-gom-type]").selectmenu();
                 $("th", "#table-viewer").last().attr("data-gom-role", "target");
                 $("th", "#table-viewer").last().attr("data-gom-index", $("th", "#table-viewer").last().index());
 
@@ -38,8 +39,7 @@ gom.fileManager = {
                         gom.fileManager.uploadDataRoles();
                     }
                 });
-                neuralNetwork.setParameter("features", response.headers);
-                console.log(neuralNetwork.features);
+                
                 $("[data-gom-type]").change(function () {
                     gom.fileManager.uploadDataRoles();
                 });
@@ -60,19 +60,10 @@ gom.fileManager = {
         }
         gom.clew.uploadDataRoles(data)
             .done(function (response) {
-                console.log("oldLayers", neuralNetwork.layers);
                 var layers = neuralNetwork.layers;
                 layers[0] = response.inputs;
                 layers[layers.length - 1] = response.outputs;
                 neuralNetwork.setFixedLayers(layers);
-                //$("#numerized-table").DataTable({
-                //    data: response.sample,
-                //    columns: neuralNetwork.features,
-                //    paging: false,
-                //    searching: false,
-                //    info: false,
-                //    ordering: false,
-                //});
                 console.log(response.sample);
             })
             .fail(function () { console.log("fail"); });

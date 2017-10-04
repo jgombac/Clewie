@@ -13,6 +13,5 @@ namespace ClewieCore.Learning
         public double BiasValue { get; set; }
         public double[] Input { get; set; }
 
-        public TestCase() { }
     }
 }

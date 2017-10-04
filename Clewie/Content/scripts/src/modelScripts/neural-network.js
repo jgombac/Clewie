@@ -28,7 +28,6 @@ var neuralNetwork = (function () {
             this.features = data;
         else if (param == "target")
             this.targets = data;
-        console.log(param, data);
     }
 
 

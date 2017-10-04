@@ -19,13 +19,30 @@
 
             <div class="model-section">
                 <div class="model-item inline">
-                    <input class="js-layersSandbox" type="text" name="layers" />
+                    <div class="model-item">
+                        <label class="label">Layers</label>
+                        <input class="js-layersSandbox" type="text" name="layers" />
+                    </div>
+                    <div class="model-item">
+                        <label class="label">Weights value</label>
+                        <input class="js-weightsSandbox" type="text" name="weights" />
+                    </div>
+                    <div class="model-item">
+                        <label class="label">Bias value</label>
+                        <input class="js-biasSandbox" type="text" name="bias" />
+                    </div>
+                    <div class="model-item">
+                        <label class="label">Input</label>
+                        <input class="js-inputSandbox" type="text" name="input" />
+                    </div>
+                </div>
+                <div class="model-item inline">
+                    <pre class="json-result"></pre>
                 </div>
             </div>
 
-            <div class="model-section">
-                <pre class="json-result"></pre>
-            </div>
+
+            
         </div>
     </div>
 
