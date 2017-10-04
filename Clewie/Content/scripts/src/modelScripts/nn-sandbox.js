@@ -3,10 +3,28 @@
     var init = function (context) {
         //this.context = context;
 
+
         $(context).on("click", ".js-runSandbox", function () {
             run(context, {});
         });
+
+        $(context).on("keyup change", ".js-layersSandbox", function () {
+            parseLayers(context);
+        });
     }
+
+    var parseLayers = function (context) {
+        var input = $(".js-layersSandbox", context).val();
+        var parsed = input.split(",")
+            .map(function (item) {
+                return item.trim();
+            })
+            .filter(function (e) { return e.replace(/(\r\n|\n|\r)/gm, "") });
+        //split(",").filter(function (e) { return e.replace(/(\r\n|\n|\r)/gm, "").replace(" ", "") });
+        console.log("parsed value", parsed);
+
+    }
+
 
 
 
