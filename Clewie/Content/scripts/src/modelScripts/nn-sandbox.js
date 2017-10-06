@@ -57,7 +57,7 @@
             else
                 console.log(splitArray[i] + " is not an integer or isn't greater than 0");
         }
-        $(".js-layersSandbox-out", context).html(layers.join());
+        //$(".js-layersSandbox-out", context).html(layers.join());
     }
 
     var parseInput = function (context) {
@@ -79,9 +79,10 @@
     }
 
     var prettyPrint = function (k, v) {
-            if (v instanceof Array)
-                return JSON.stringify(v);
-            return v;
+        if (v instanceof Array) {
+            return (k != "output") ? JSON.stringify(v) : v;
+        }
+        return v;
     }
 
 
@@ -94,7 +95,12 @@
         }
         gom.clew.runSandbox(data)
             .done(function (response) {
-                $(".json-result", context).html(JSON.stringify(response, prettyPrint, 2));
+                $(".json-result", context).jsonBrowse(response);
+                //    .html(JSON.stringify(response, prettyPrint, 2));
+                //$(".json-result").each(function (i, v) {
+                //    hljs.highlightBlock(v);
+                //});
+                //hljs.highlightBlock($(".json-result", context));
             })
             .fail(function (response) {
                 $(".json-result", context).html(JSON.stringify(response, null, 2));

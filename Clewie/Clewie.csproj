@@ -268,7 +268,9 @@
     <Content Include="Content\scripts\src\modelScripts\neural-network.js" />
     <Content Include="Content\scripts\src\plugins\datatables.js" />
     <Content Include="Content\scripts\src\plugins\datatables.min.js" />
+    <Content Include="Content\scripts\src\plugins\highlight.pack.js" />
     <Content Include="Content\scripts\src\plugins\jquery-ui.min.js" />
+    <Content Include="Content\scripts\src\plugins\jquery.json-browse.js" />
     <Content Include="Content\scripts\src\plugins\jsrender.js" />
     <Content Include="Content\scripts\src\plugins\modal.js" />
     <Content Include="Content\scripts\src\utils\api-helper.js" />
@@ -277,6 +279,8 @@
     <Content Include="Content\scripts\src\utils\randomizer.js" />
     <Content Include="Content\scripts\src\utils\topbar.js" />
     <Content Include="Content\styles\build\style.css" />
+    <None Include="Content\styles\src\base\default.scss" />
+    <None Include="Content\styles\src\base\json-browse.scss" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

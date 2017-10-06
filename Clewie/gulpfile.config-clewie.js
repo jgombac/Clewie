@@ -46,6 +46,8 @@
                 "source": [
                     path_source_scripts + "plugins/modal.js",
                     path_source_scripts + "plugins/jsrender.js",
+                    path_source_scripts + "plugins/highlight.pack.js",
+                    path_source_scripts + "plugins/jquery.json-browse.js",
                     path_source_scripts + "plugins/datatables.js",
                     path_source_scripts + "plugins/jquery-ui.min.js",
                     path_source_scripts + "plugins/d3.min.js",

@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e23e5d83b");
+@import url("/Content/assets/icons/style.css?v15e27663bea");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -522,8 +522,8 @@ body {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("/fonts/glyphicons-halflings-regular.eot?v15df5fcf422");
-  src: url("/fonts/glyphicons-halflings-regular.eot?v15df5fcf422#iefix") format("embedded-opentype"), url("/fonts/glyphicons-halflings-regular.woff?v15df5fcf425") format("woff"), url("/fonts/glyphicons-halflings-regular.ttf?v15df5fcf424") format("truetype"), url("/fonts/glyphicons-halflings-regular.svg?v15df5fcf423#glyphicons-halflingsregular") format("svg"); }
+  src: url("/fonts/glyphicons-halflings-regular.eot?v15ddf591b04");
+  src: url("/fonts/glyphicons-halflings-regular.eot?v15ddf591b04#iefix") format("embedded-opentype"), url("/fonts/glyphicons-halflings-regular.woff?v15ddf591b04") format("woff"), url("/fonts/glyphicons-halflings-regular.ttf?v15ddf591b04") format("truetype"), url("/fonts/glyphicons-halflings-regular.svg?v15ddf591b04#glyphicons-halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -1135,6 +1135,144 @@ body {
 .glyphicon-wrench:before {
   content: "\1f527"; }
 
+/*
+
+Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+
+*/
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #F0F0F0; }
+
+/* Base color: saturation 0; */
+.hljs,
+.hljs-subst {
+  color: #444; }
+
+.hljs-comment {
+  color: #888888; }
+
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-meta-keyword,
+.hljs-doctag,
+.hljs-name {
+  font-weight: bold; }
+
+.hljs-attr {
+  /*color: $bright-blue;*/
+  font-weight: bold; }
+
+/* User color: hue: 0 */
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #880000; }
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold; }
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #BC6060; }
+
+/* Language color: hue: 90; */
+.hljs-literal {
+  color: #78A960; }
+
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+  color: #397300; }
+
+/* Meta color: hue: 200 */
+.hljs-meta {
+  color: #1f7199; }
+
+.hljs-meta-string {
+  color: #4d99bf; }
+
+/* Misc effects */
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
+/* Syntax highlighting for JSON objects */
+.json-body {
+  margin: 10px 20px; }
+
+ul.json-dict, ol.json-array {
+  list-style-type: none;
+  margin: 0 0 0 1px;
+  border-left: 1px dotted #ccc;
+  padding-left: 2em;
+  font: 13px/18px monospace;
+  -webkit-font-smoothing: antialiased; }
+
+.json-string {
+  color: #0B7500; }
+
+.json-literal {
+  color: #1A01CC;
+  font-weight: bold; }
+
+/* Toggle button */
+a.json-toggle {
+  position: relative;
+  color: inherit;
+  text-decoration: none; }
+
+a.json-toggle:focus {
+  outline: none; }
+
+a.json-toggle:before {
+  content: "\25B6";
+  /* left arrow */
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  color: #d9d9d9;
+  position: absolute;
+  display: inline-block;
+  width: 1em;
+  font-size: 10px;
+  left: -1.5em; }
+
+a.json-toggle.collapsed:before {
+  content: "\25B6";
+  /* left arrow */
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  font-size: 10px; }
+
+/* Collapsable placeholder links */
+a.json-placeholder {
+  color: #aaa;
+  padding: 0 1em;
+  text-decoration: none; }
+
+a.json-placeholder:hover {
+  text-decoration: underline; }
+
 /*ICONS*/
 /*COMPONENTS*/
 label {
@@ -1452,7 +1590,8 @@ input[type="file"].file-upload-def {
 
 .json-result {
   font-size: 14px;
-  text-align: left; }
+  text-align: left;
+  margin: 0; }
 
 .model-section {
   padding: 10px 20px;
