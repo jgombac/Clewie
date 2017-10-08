@@ -2,131 +2,70 @@
 using System.Text;
 using System.Linq;
 using System;
+using ClewieCore.Models;
+using System.Collections.Generic;
 
 namespace ClewieCore.Learning
 {
-    public class NeuralNetwork
-    {
-        private int[] layers;
+    public class NeuralNetwork {
 
-        private double[][] neurons;
-
-        private double[][][] weights;
-        private double[][] biases;
-
-        //back-propagation
-        private double[][] gradients;
-        private double[][][] prevWeightsDelta;
-        private double[][] prevBiasesDelta;
+        private Layer[] layers;
+        private double[] output;
 
         public NeuralNetwork(int[] layers) {
-            this.layers = layers;
-            InitNetwork();
-        }
-
-        public NeuralNetwork(TestCase test)
-        {
-            this.layers = test.Layers;
-            neurons = Randomizer.EmptyMatrix(layers);
-
-            weights = Randomizer.Matrices(layers, test.WeightValue);
-            biases = Randomizer.Biases(layers.Skip(1).ToArray(), test.BiasValue);
-
-            gradients = Randomizer.EmptyMatrix(layers.Skip(1).ToArray());
-            prevWeightsDelta = Randomizer.EmptyMatrices(layers);
-            prevBiasesDelta = Randomizer.EmptyMatrix(layers.Skip(1).ToArray());
-        }
-
-        private void InitNetwork()
-        {
-            //Only weights and biases need to have a starting value, others can be empty
-            neurons = Randomizer.EmptyMatrix(layers);
-            weights = Randomizer.RandomMatrices(layers);
-            biases = Randomizer.RandomMatrix(layers.Skip(1).ToArray());
-
-            //weights = Randomizer.Matrices(layers, 0.5);
-            //biases = Randomizer.Biases(layers.Skip(1).ToArray(), 1);
-
-            gradients = Randomizer.EmptyMatrix(layers.Skip(1).ToArray());
-            prevWeightsDelta = Randomizer.EmptyMatrices(layers);
-            prevBiasesDelta = Randomizer.EmptyMatrix(layers.Skip(1).ToArray());
-        }
-
-
-        public double[] ComputeOutputs(double[] inputs) {
-            if (inputs.Length != neurons[0].Length)
-                throw new Exception(String.Format("Bad input length: {0}, expected: {1}", inputs.Length, neurons[0].Length));
-
-            for (int i = 0; i < neurons[0].Length; i++) //Copy inputs to neurons
-                neurons[0][i] = inputs[i];
-
-            for (int i = 1; i < neurons.Length; i++) {
-                double[] weightedSums = new double[neurons[i].Length];
-                for (int j = 0; j < weightedSums.Length; j++) {
-                    for (int k = 0; k < neurons[i - 1].Length; k++) {
-                        weightedSums[j] += neurons[i - 1][k] * weights[i - 1][j][k];
-                    }
-                    weightedSums[j] += biases[i - 1][j]; // add bias
-                    if (i <= neurons.Length - 2) { //apply only to hidden layers
-                        neurons[i][j] = HyperTanFunction(weightedSums[j]);
-                    }
-                    else if (i == neurons.Length - 1 && j == weightedSums.Length - 1) { //apply only to output layer
-                        double[] softOut = SoftMax(weightedSums);
-                        Array.Copy(softOut, neurons[i], softOut.Length);
-                        double[] result = new double[neurons[i].Length];
-                        Array.Copy(neurons[i], result, result.Length);
-                        return result;
-                    }
-                }
+            this.layers = new Layer[layers.Length];
+            for (int i = 0; i < layers.Length; i++) {
+                this.layers[i] = new Layer((i == 0) ? 0 : layers[i - 1], layers[i]);
             }
-
-            return null;
         }
 
-
-        private double HyperTanFunction(double x) {
-            if (x < -20.0) return -1.0; // approximation is correct to 30 decimals
-            else if (x > 20.0) return 1.0;
-            else return Math.Tanh(x);
+        public NeuralNetwork(TestCase test) {
+            var layers = test.Layers;
+            this.layers = new Layer[layers.Length];
+            for (int i = 0; i < layers.Length; i++) {
+                this.layers[i] = new Layer((i == 0) ? 0 : layers[i - 1], layers[i], test);
+            }
         }
 
-        private double[] SoftMax(double[] outputs) {
-            // determine max output sum
-            // does all output nodes at once so scale doesn't have to be re-computed each time
-            double max = outputs[0];
-            for (int i = 0; i < outputs.Length; ++i)
-                if (outputs[i] > max) max = outputs[i];
+        public Layer this[int i] {
+            get { return layers[i]; }
+        }
 
-            // determine scaling factor -- sum of exp(each val - max)
+        public double[] Compute(double[] input) {
+            if (input.Length != layers[0].Outputs.Length)
+                throw new Exception(string.Format("Unexpected input length: {0}, expected: {1}", input.Length, layers[0].Outputs.Length));
+            output = input;
+            for (int i = 0; i < layers.Length; i++) {
+                output = layers[i].Compute(output);
+                if (i == layers.Length - 1)
+                    output = Softmax(output);
+                else if (i > 0)
+                    output = HyperTanFunction(output);
+            }
+            return output;
+        }
+
+        private static double[] HyperTanFunction(double[] values) {
+            double[] result = new double[values.Length];
+            for (int i = 0; i < values.Length; i++) {
+                if (values[i] < -20.0) result[i] = -1.0;
+                else if (values[i] > 20.0) result[i] = 1.0;
+                else result[i] = Math.Tanh(values[i]);
+            }
+            return result;
+        }
+
+        private double[] Softmax(double[] values) {
+            double max = values[0];
+            for (int i = 0; i < values.Length; ++i)
+                if (values[i] > max) max = values[i];
             double scale = 0.0;
-            for (int i = 0; i < outputs.Length; ++i)
-                scale += Math.Exp(outputs[i] - max);
-
-            double[] result = new double[outputs.Length];
-            for (int i = 0; i < outputs.Length; ++i)
-                result[i] = Math.Exp(outputs[i] - max) / scale;
-
-            return result; // now scaled so that xi sum to 1.0
-        }
-
-
-        public double[][][] GetWeights() {
-            return weights;
-        }
-
-        public string WeightsToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            for(int i = 0; i < weights.Length; i++)
-            {
-                sb.Append("|");
-                for (int j = 0; j < weights[i].Length; j++)
-                {
-                    sb.Append(weights[i][j] + "|");
-                }
-                sb.AppendLine();
-            }
-            return sb.ToString();
+            for (int i = 0; i < values.Length; ++i)
+                scale += Math.Exp(values[i] - max);
+            double[] result = new double[values.Length];
+            for (int i = 0; i < values.Length; ++i)
+                result[i] = Math.Exp(values[i] - max) / scale;
+            return result;
         }
     }
 }

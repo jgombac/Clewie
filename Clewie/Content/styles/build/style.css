@@ -2,7 +2,7 @@
 /*COLORS*/
 /*SCREEN WIDTHS*/
 /*BASE*/
-@import url("/Content/assets/icons/style.css?v15e27663bea");
+@import url("/Content/assets/icons/style.css?v15e23e5d83b");
 body {
   margin: 0;
   font-family: Helvetica;
@@ -522,8 +522,8 @@ body {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("/fonts/glyphicons-halflings-regular.eot?v15ddf591b04");
-  src: url("/fonts/glyphicons-halflings-regular.eot?v15ddf591b04#iefix") format("embedded-opentype"), url("/fonts/glyphicons-halflings-regular.woff?v15ddf591b04") format("woff"), url("/fonts/glyphicons-halflings-regular.ttf?v15ddf591b04") format("truetype"), url("/fonts/glyphicons-halflings-regular.svg?v15ddf591b04#glyphicons-halflingsregular") format("svg"); }
+  src: url("/fonts/glyphicons-halflings-regular.eot?v15df5fcf422");
+  src: url("/fonts/glyphicons-halflings-regular.eot?v15df5fcf422#iefix") format("embedded-opentype"), url("/fonts/glyphicons-halflings-regular.woff?v15df5fcf425") format("woff"), url("/fonts/glyphicons-halflings-regular.ttf?v15df5fcf424") format("truetype"), url("/fonts/glyphicons-halflings-regular.svg?v15df5fcf423#glyphicons-halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;

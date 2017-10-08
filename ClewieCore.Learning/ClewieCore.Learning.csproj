@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Layer.cs" />
     <Compile Include="NeuralNetwork.cs" />
+    <Compile Include="Perceptron.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestCase.cs" />
   </ItemGroup>
@@ -48,6 +50,10 @@
     <ProjectReference Include="..\ClewieCore.Data\ClewieCore.Data.csproj">
       <Project>{26FC2766-BC0C-4AE5-B92E-1578E9502FCF}</Project>
       <Name>ClewieCore.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClewieCore.Models\ClewieCore.Models.csproj">
+      <Project>{D83763D1-D594-44F7-97E8-7443F1008867}</Project>
+      <Name>ClewieCore.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

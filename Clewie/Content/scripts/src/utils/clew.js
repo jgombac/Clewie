@@ -43,6 +43,10 @@ gom.clew = {
         return gom.clew.call("POST", "/Create/UpdateDataRoles", data);
     },
 
+    pretrain: function (data) {
+        return gom.clew.call("POST", "/Create/Pretrain", data);
+    },
+
     runSandbox: function (data) {
         return gom.clew.call("POST", "/Create/TestPrediction", data);
     }

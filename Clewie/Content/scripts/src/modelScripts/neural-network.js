@@ -6,15 +6,32 @@ var neuralNetwork = (function () {
     var layers = [4, 5, 3];
     var locked = false;
 
+    var model = {};
+
     var init = function (context) {
 
         nnVisual.init(context, this);
         $(".start-btn").click(function () {
-            uploadParameters();
+            pretrain();
             console.log(layers);
         });
         setDefaultParameters();
     };
+
+    var updateModel = function () {
+        model = {
+            id: $("[data-gom-model='id']").val(),
+            name: $("[data-gom-model='name']").val(),
+            description: $("[data-gom-model='description']").val(),
+            layers: layers,
+            parameters: {
+                maxEpochs: parseFloat($("#max-epochs").val()),
+                learningRate: parseFloat($("#learning-rate").val()),
+                momentum: parseFloat($("#momentum").val()),
+                weightDecay: parseFloat($("#weight-decay").val()),
+            }
+        }
+    }
 
     var setDefaultParameters = function () {
         $("#max-epochs").val(1000);
@@ -43,16 +60,21 @@ var neuralNetwork = (function () {
         console.log(this);
     }
 
+    var pretrain = function () {
+        updateModel();
+        gom.clew.pretrain(model)
+            .done(function (response) {
+                console.log("response");
+            })
+            .fail(function () {
+
+            });
+    }
+
 
     var uploadParameters = function () {
-        var data = {
-            layers: layers,
-            maxEpochs: parseFloat($("#max-epochs").val()),
-            learningRate: parseFloat($("#learning-rate").val()),
-            momentum: parseFloat($("#momentum").val()),
-            weightDecay: parseFloat($("#weight-decay").val()),
-        }
-        gom.clew.uploadParameters(data)
+        updateModel();
+        gom.clew.uploadParameters(model)
             .done(function (response) {
                 console.log(response);
             })

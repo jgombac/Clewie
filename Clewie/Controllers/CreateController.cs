@@ -4,6 +4,7 @@ using ClewieCore.Data;
 using ClewieCore.Models;
 using ClewieCore.Learning;
 using System;
+using System.Linq;
 
 namespace Clewie.Controllers
 {
@@ -42,10 +43,22 @@ namespace Clewie.Controllers
 
         [HttpPost]
         [Route("Create/UploadParameters")]
-        public string UploadParameters (NeuralNetworkParameters model)
+        public JsonResult UploadParameters (NeuralNetworkModel model)
         {
             var nn = new NeuralNetwork(model.Layers);
-            return nn.WeightsToString();
+            Session["neuralNetwork"] = nn;
+   
+            return Json(new { });
+        }
+
+        [HttpPost]
+        [Route("Create/Pretrain")]
+        public JsonResult Pretrain(NeuralNetworkModel model) {
+            NeuralNetwork nn = new NeuralNetwork(model.Layers);
+            DataFactory df = Session["dataFactory"] as DataFactory;
+            var learningParams = model.Parameters;
+            //var predictions = nn.Pretrain(df.NumerizedDataset, learningParams);
+            return Json(new { });
         }
 
         [HttpPost]
@@ -55,7 +68,7 @@ namespace Clewie.Controllers
             try { 
                 return Json(new {
                     testCase = model,
-                    output = new NeuralNetwork(model).ComputeOutputs(model.Input),
+                    output = new NeuralNetwork(model).Compute(model.Input),
                 });
             }
             catch (Exception ex) {
