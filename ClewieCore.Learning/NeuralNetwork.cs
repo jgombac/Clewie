@@ -11,12 +11,17 @@ namespace ClewieCore.Learning
 
         private Layer[] layers;
         private double[] output;
+        private int numInputs;
+        private int numOutputs;
+
 
         public NeuralNetwork(int[] layers) {
             this.layers = new Layer[layers.Length];
             for (int i = 0; i < layers.Length; i++) {
                 this.layers[i] = new Layer((i == 0) ? 0 : layers[i - 1], layers[i]);
             }
+            this.numInputs = layers[0];
+            this.numOutputs = layers[layers.Length - 1];
         }
 
         public NeuralNetwork(TestCase test) {
@@ -27,8 +32,17 @@ namespace ClewieCore.Learning
             }
         }
 
+
         public Layer this[int i] {
             get { return layers[i]; }
+        }
+
+        public int NumInputs {
+            get { return numInputs; }
+        }
+
+        public int NumOutputs {
+            get { return numOutputs; }
         }
 
         public double[] Compute(double[] input) {

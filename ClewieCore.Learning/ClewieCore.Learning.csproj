@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackPropagation.cs" />
     <Compile Include="Layer.cs" />
     <Compile Include="NeuralNetwork.cs" />
     <Compile Include="Perceptron.cs" />

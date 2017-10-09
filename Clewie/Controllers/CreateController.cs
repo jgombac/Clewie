@@ -57,8 +57,9 @@ namespace Clewie.Controllers
             NeuralNetwork nn = new NeuralNetwork(model.Layers);
             DataFactory df = Session["dataFactory"] as DataFactory;
             var learningParams = model.Parameters;
-            //var predictions = nn.Pretrain(df.NumerizedDataset, learningParams);
-            return Json(new { });
+            BackPropagation backProp = new BackPropagation(nn, learningParams);
+            var predictions = backProp.Train(df.NumerizedDataset);
+            return Json(new { predictions = predictions });
         }
 
         [HttpPost]
