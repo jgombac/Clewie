@@ -26,9 +26,8 @@ gom.clew = {
         });
     },
 
-
-    publishModel: function () {
-        return gom.clew.call("POST", "");
+    generateID: function () {
+        return gom.clew.call("GET", "/Create/GenerateID");
     },
 
     uploadParameters: function (data) {
@@ -49,6 +48,10 @@ gom.clew = {
 
     runSandbox: function (data) {
         return gom.clew.call("POST", "/Create/TestPrediction", data);
-    }
+    },
+
+    publishModel: function (data) {
+        return gom.clew.call("POST", "/Create/Publish", data);
+    },
     
 }

@@ -1,6 +1,9 @@
 ﻿using ClewieCore.Data;
+using System;
 
 namespace ClewieCore.Learning {
+
+    [Serializable]
     public class Perceptron {
 
         private double[] weights;

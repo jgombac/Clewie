@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 namespace ClewieCore.Learning
 {
+    [Serializable]
     public class NeuralNetwork {
 
         private Layer[] layers;
@@ -36,6 +37,7 @@ namespace ClewieCore.Learning
         public Layer this[int i] {
             get { return layers[i]; }
         }
+
 
         public int NumInputs {
             get { return numInputs; }

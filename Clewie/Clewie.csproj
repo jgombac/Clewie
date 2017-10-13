@@ -246,6 +246,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\ClewieDB.mdf" />
+    <Content Include="App_Data\ClewieDB_log.ldf">
+      <DependentUpon>ClewieDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\assets\icons\demo-files\demo.css" />
     <Content Include="Content\assets\icons\demo-files\demo.js" />
@@ -308,6 +312,7 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\styles\src\forms\_model-tile.scss" />
     <Content Include="gulpfile.config-clewie.js" />
@@ -342,7 +347,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -366,7 +373,6 @@
     <Content Include="Views\JsTemplates\SandboxModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Model\" />
   </ItemGroup>
   <ItemGroup>
@@ -397,6 +403,9 @@
       <Project>{D83763D1-D594-44F7-97E8-7443F1008867}</Project>
       <Name>ClewieCore.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

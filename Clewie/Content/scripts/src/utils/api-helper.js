@@ -8,8 +8,14 @@ gom.create = {
     model: null,
 
     init: function (context) {
-        this.id = gom.randomizer.getString(8);
-        $('[data-gom-model="id"]', context).html(this.id);
+        gom.clew.generateID()
+            .done(function (id) {
+                console.log(id);
+                $('[data-gom-model="id"]', context).html(id);
+            })
+            .fail(function () {
+                console.log("id fail");
+            });
 
         $("#publish-model").on("click", function () {
             var valid = gom.create.prepareData(context);

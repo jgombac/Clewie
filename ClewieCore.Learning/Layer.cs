@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ClewieCore.Learning {
+
+    [Serializable]
     public class Layer {
 
         private int inputs;

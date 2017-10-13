@@ -7,20 +7,25 @@ var neuralNetwork = (function () {
     var locked = false;
 
     var model = {};
+    that = null;
 
     var init = function (context) {
-
+        that = this;
         nnVisual.init(context, this);
         $(".start-btn").click(function () {
             pretrain();
             console.log(layers);
         });
+
+        $(".refresh-btn").click(function () {
+            publish();
+        });
         setDefaultParameters();
     };
 
     var updateModel = function () {
-        model = {
-            id: $("[data-gom-model='id']").val(),
+        that.model = {
+            id: $("[data-gom-model='id']").text(),
             name: $("[data-gom-model='name']").val(),
             description: $("[data-gom-model='description']").val(),
             layers: layers,
@@ -71,6 +76,13 @@ var neuralNetwork = (function () {
             });
     }
 
+    var publish = function () {
+        updateModel();
+        gom.clew.publishModel(that.model)
+            .done()
+            .fail();
+    }
+
 
     var uploadParameters = function () {
         updateModel();
@@ -89,5 +101,6 @@ var neuralNetwork = (function () {
         setParameter: setParameter,
         updateLayers: updateLayers,
         setFixedLayers: setFixedLayers,
+        model: model,
     };
 })();
